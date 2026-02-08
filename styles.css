@@ -222,6 +222,13 @@ a {
   display: block;
 }
 
+.hero-figure figcaption {
+  margin-top: 10px;
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-align: center;
+}
+
 .hero-panel {
   background: #ffffff;
   border-radius: 22px;

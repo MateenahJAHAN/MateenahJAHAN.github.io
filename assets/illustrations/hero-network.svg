@@ -5,42 +5,51 @@
   fill="none"
   xmlns="http://www.w3.org/2000/svg"
 >
-  <path
-    d="M40 70L150 50L250 110L370 80L470 140"
-    stroke="#c7d2fe"
-    stroke-width="2"
-  />
-  <path
-    d="M70 210L160 160L260 200L350 170L440 230"
-    stroke="#c7d2fe"
-    stroke-width="2"
-  />
-  <path
-    d="M110 120L210 90L310 150L410 120"
-    stroke="#e0e7ff"
-    stroke-width="2"
-  />
-  <path
-    d="M90 260L190 230L290 270L390 240"
-    stroke="#e0e7ff"
-    stroke-width="2"
-  />
-  <circle cx="40" cy="70" r="6" fill="#2563eb" />
-  <circle cx="150" cy="50" r="6" fill="#2563eb" />
-  <circle cx="250" cy="110" r="6" fill="#7c3aed" />
-  <circle cx="370" cy="80" r="6" fill="#2563eb" />
-  <circle cx="470" cy="140" r="6" fill="#7c3aed" />
-  <circle cx="70" cy="210" r="6" fill="#2563eb" />
-  <circle cx="160" cy="160" r="6" fill="#7c3aed" />
-  <circle cx="260" cy="200" r="6" fill="#2563eb" />
-  <circle cx="350" cy="170" r="6" fill="#7c3aed" />
-  <circle cx="440" cy="230" r="6" fill="#2563eb" />
-  <circle cx="110" cy="120" r="5" fill="#94a3b8" />
-  <circle cx="210" cy="90" r="5" fill="#94a3b8" />
-  <circle cx="310" cy="150" r="5" fill="#94a3b8" />
-  <circle cx="410" cy="120" r="5" fill="#94a3b8" />
-  <circle cx="90" cy="260" r="5" fill="#94a3b8" />
-  <circle cx="190" cy="230" r="5" fill="#94a3b8" />
-  <circle cx="290" cy="270" r="5" fill="#94a3b8" />
-  <circle cx="390" cy="240" r="5" fill="#94a3b8" />
+  <rect x="24" y="24" width="472" height="272" rx="20" fill="#f8fafc" />
+  <rect x="24" y="24" width="472" height="56" rx="20" fill="#eef2ff" />
+  <text
+    x="48"
+    y="58"
+    font-family="Inter, Arial, sans-serif"
+    font-size="16"
+    fill="#1e293b"
+    font-weight="600"
+  >
+    DeepTCR pipeline snapshot
+  </text>
+
+  <rect x="60" y="110" width="90" height="70" rx="14" fill="#ffffff" stroke="#cbd5f0" />
+  <rect x="210" y="110" width="90" height="70" rx="14" fill="#ffffff" stroke="#cbd5f0" />
+  <rect x="360" y="110" width="90" height="70" rx="14" fill="#ffffff" stroke="#cbd5f0" />
+  <rect x="210" y="210" width="90" height="70" rx="14" fill="#ffffff" stroke="#cbd5f0" />
+
+  <circle cx="105" cy="145" r="14" fill="#2563eb" />
+  <circle cx="255" cy="145" r="14" fill="#7c3aed" />
+  <circle cx="405" cy="145" r="14" fill="#14b8a6" />
+  <circle cx="255" cy="245" r="14" fill="#2563eb" />
+
+  <path d="M150 145H210" stroke="#94a3b8" stroke-width="2" />
+  <path d="M300 145H360" stroke="#94a3b8" stroke-width="2" />
+  <path d="M255 180V210" stroke="#94a3b8" stroke-width="2" />
+
+  <text x="70" y="170" font-family="Inter, Arial, sans-serif" font-size="12" fill="#475569">
+    Data
+  </text>
+  <text x="210" y="170" font-family="Inter, Arial, sans-serif" font-size="12" fill="#475569">
+    Model
+  </text>
+  <text x="360" y="170" font-family="Inter, Arial, sans-serif" font-size="12" fill="#475569">
+    Validation
+  </text>
+  <text x="210" y="270" font-family="Inter, Arial, sans-serif" font-size="12" fill="#475569">
+    Clinical insight
+  </text>
+
+  <rect x="70" y="200" width="120" height="8" rx="4" fill="#dbe2ff" />
+  <rect x="70" y="220" width="90" height="8" rx="4" fill="#e2e8f0" />
+  <rect x="70" y="240" width="110" height="8" rx="4" fill="#dbe2ff" />
+
+  <rect x="340" y="210" width="120" height="8" rx="4" fill="#dbe2ff" />
+  <rect x="340" y="230" width="90" height="8" rx="4" fill="#e2e8f0" />
+  <rect x="340" y="250" width="110" height="8" rx="4" fill="#dbe2ff" />
 </svg>
