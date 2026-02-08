@@ -1,0 +1,14 @@
+<svg
+  width="48"
+  height="48"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M26 4L10 26H22L18 44L38 20H26L30 4H26Z"
+    stroke="#2563eb"
+    stroke-width="2"
+    stroke-linejoin="round"
+  />
+</svg>
