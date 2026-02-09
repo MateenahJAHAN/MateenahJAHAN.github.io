@@ -509,6 +509,37 @@ a {
   color: var(--muted);
 }
 
+.info-card .icon-list {
+  gap: 12px;
+}
+
+.info-card .icon-list li {
+  line-height: 1.55;
+}
+.profile-card {
+  margin: 0 0 18px;
+  padding: 10px;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow-soft);
+  width: min(100%, 320px);
+}
+
+.profile-photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.profile-card figcaption {
+  margin-top: 10px;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
 
 .about-text p {
   margin-top: 0;
