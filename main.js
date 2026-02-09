@@ -1,3 +1,19 @@
+const normalizeContactSection = () => {
+  const contactSections = Array.from(document.querySelectorAll('section#contact'));
+  if (contactSections.length > 1) {
+    contactSections.slice(1).forEach((section) => section.remove());
+  }
+
+  const canonicalEmail = 'jahanmateenah55@gmail.com';
+  const emailLinks = document.querySelectorAll('a[href^="mailto:"]');
+  emailLinks.forEach((link) => {
+    link.href = `mailto:${canonicalEmail}`;
+    link.textContent = canonicalEmail;
+  });
+};
+
+normalizeContactSection();
+
 const navLinks = Array.from(document.querySelectorAll('.nav-links a[href^="#"]'));
 const sectionMap = new Map();
 
