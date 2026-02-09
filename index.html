@@ -870,42 +870,43 @@
                   <img src="assets/icons/ai.svg" alt="" aria-hidden="true" />
                 </div>
                 <div>
-                  <h3>Clinical AI Agents + MCP (USA.AI)</h3>
+                  <h3>Synapse (BoldConnect) - MCP tool for ligand discovery</h3>
                   <p>
-                    LLM agent prototypes that extract structured data from
-                    clinical notes, orchestrated with MCP and served via Flask
-                    APIs.
+                    A FastMCP server that exposes the BOLD-GPCRs model to AI
+                    agents for ligand activity prediction, library screening, and
+                    mutation impact analysis.
                   </p>
                 </div>
               </div>
               <div class="journey-tags">
-                <span>Flask APIs</span>
-                <span>LLM orchestration</span>
-                <span>MCP server</span>
-                <span>Schema validation</span>
+                <span>FastMCP server</span>
+                <span>GPCR ligand screening</span>
+                <span>Docker runtime</span>
+                <span>Adapter layer</span>
               </div>
               <p class="journey-meta">
-                Architecture: PDF/Note ingestion → LLM agent → schema validation →
-                API response, with MCP tools for integration.
+                Designed for agent-friendly workflows: stdio MCP server,
+                dockerized runtime, and a clean adapter for BOLD-GPCRs with a
+                built-in approved-drug demo library.
               </p>
               <ul class="journey-list">
                 <li>
                   <a
-                    href="https://github.com/MateenahJAHAN/USA-AI-Onboarding-learning-daily-update"
+                    href="https://github.com/MateenahJAHAN/BoldConnect"
                     target="_blank"
                     rel="noopener"
                   >
-                    Clinical AI agent prototypes
+                    Synapse MCP server (BoldConnect)
                   </a>
                   <span>
-                    Flask API, Pydantic schemas, MCP tool registry, and testing
-                    harness.
+                    Tooling: predict_single_pair, screen_library, and
+                    predict_mutation_impact for GPCR sequences.
                   </span>
                 </li>
                 <li>
                   <span>
-                    Structured extraction for diagnoses, medications, and patient
-                    metadata with safety-first outputs.
+                    Includes Docker quickstart, MCP smoke tests, and an adapter
+                    contract to connect the BOLD-GPCRs engine.
                   </span>
                 </li>
               </ul>
