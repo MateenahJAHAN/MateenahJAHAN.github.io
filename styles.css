@@ -9,8 +9,8 @@
   --card: #ffffff;
   --text: #0b1324;
   --muted: #4b5563;
-  --primary: #1f4fd6;
-  --primary-dark: #1e3a8a;
+  --primary: #dc2626;
+  --primary-dark: #991b1b;
   --accent: #0f766e;
   --accent-2: #7c3aed;
   --border: #e2e8f0;
@@ -160,7 +160,7 @@ a {
   letter-spacing: 0.08em;
   font-size: 0.75rem;
   font-weight: 600;
-  background: linear-gradient(90deg, #1f4fd6, #7c3aed);
+  background: linear-gradient(90deg, #dc2626, #7c3aed);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -439,7 +439,7 @@ a {
 }
 
 .badge {
-  background: #0b5ed7;
+  background: var(--primary);
   color: #fff;
   padding: 4px 10px;
   border-radius: 999px;
@@ -507,13 +507,6 @@ a {
   margin-top: 10px;
   font-size: 0.88rem;
   color: var(--muted);
-}
-
-
-.about-text p {
-  margin-top: 0;
-  font-size: 1.14rem;
-  max-width: 62ch;
 }
 
 .info-card .icon-list {
@@ -1222,8 +1215,8 @@ a {
   padding: 2px 8px;
   border-radius: 999px;
   font-size: 0.7rem;
-  background: #e8efff;
-  color: #1f4aa0;
+  background: #fee2e2;
+  color: #991b1b;
 }
 
 .skills-grid .chips {
@@ -1245,12 +1238,12 @@ a {
 }
 
 .skills-grid .chips span {
-  background: #eef2ff;
+  background: #fef2f2;
   color: #1e293b;
   padding: 6px 10px;
   border-radius: 999px;
   font-size: 0.85rem;
-  border: 1px solid #dbe2ff;
+  border: 1px solid #fecaca;
 }
 
 .cert-list summary {
