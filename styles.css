@@ -593,6 +593,51 @@ a {
   margin-bottom: 12px;
 }
 
+.education-featured {
+  grid-column: span 2;
+}
+
+.education-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.pill {
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  color: var(--text);
+}
+
+.education-sections {
+  display: grid;
+  gap: 12px;
+}
+
+.education-sections h4 {
+  margin: 0 0 6px;
+  font-size: 0.95rem;
+}
+
+.education-courses {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.education-courses span {
+  background: #f1f5f9;
+  border: 1px solid var(--border);
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  color: var(--text);
+}
+
 .education .meta {
   margin-bottom: 12px;
 }
@@ -1044,6 +1089,10 @@ a {
 
   .hero-panel {
     order: 1;
+  }
+
+  .education-featured {
+    grid-column: span 1;
   }
 
   .timeline {
