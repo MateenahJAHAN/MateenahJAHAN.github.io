@@ -140,8 +140,7 @@ a {
   border-color: var(--primary);
 }
 
-.nav-links a:hover,
-.nav-links a.active {
+.nav-links a.is-active {
   color: var(--text);
   border-color: var(--primary);
   background-color: rgba(31, 79, 214, 0.08);
@@ -363,8 +362,9 @@ a {
   color: var(--primary);
 }
 
-.hero-actions .btn {
-  justify-content: center;
+
+.hero-actions.profile-links {
+  margin: 0 0 24px;
 }
 
 .meta {
@@ -1469,10 +1469,16 @@ a {
     flex-wrap: nowrap;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
+    -ms-overflow-style: none;
+    scroll-snap-type: x proximity;
   }
 
   .nav-links::-webkit-scrollbar {
     display: none;
+  }
+
+  .nav-links a {
+    scroll-snap-align: start;
   }
 }
 
