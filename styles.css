@@ -103,14 +103,22 @@ a {
 }
 
 .nav-links a {
-  padding-bottom: 4px;
+  display: inline-block;
+  padding: 6px 10px 8px;
   border-bottom: 2px solid transparent;
-  transition: color 0.2s ease, border-color 0.2s ease;
+  border-radius: 999px;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
 }
 
 .nav-links a:hover {
   color: var(--text);
   border-color: var(--primary);
+}
+
+.nav-links a.is-active {
+  color: var(--text);
+  border-color: var(--primary);
+  background-color: rgba(31, 79, 214, 0.08);
 }
 
 .hero-grid {
@@ -317,6 +325,11 @@ a {
 .btn.ghost:hover {
   border-color: var(--primary);
   color: var(--primary);
+}
+
+
+.hero-actions.profile-links {
+  margin: 0 0 24px;
 }
 
 .meta {
@@ -1164,6 +1177,17 @@ a {
     white-space: nowrap;
     flex-wrap: nowrap;
     -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    scroll-snap-type: x proximity;
+  }
+
+  .nav-links::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-links a {
+    scroll-snap-align: start;
   }
 }
 
@@ -1171,6 +1195,10 @@ a {
   .nav-links {
     gap: 10px;
     font-size: 0.85rem;
+  }
+
+  .nav-links a {
+    padding: 7px 12px 9px;
   }
 
   .hero-actions {
