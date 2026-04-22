@@ -917,6 +917,13 @@ a {
   color: var(--text);
 }
 
+.pill-pending {
+  background: #fefce8;
+  border-color: #fde047;
+  color: #854d0e;
+  font-size: 0.8rem;
+}
+
 .education-sections {
   display: grid;
   gap: 12px;
