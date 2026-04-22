@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mateenah Jahan — Resume</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { font-size: 10.2pt; }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: #1a1a2e;
+      background: #fff;
+      line-height: 1.5;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      padding: 13mm 16mm 11mm;
+    }
+
+    /* ─── HEADER ─── */
+    .rh-name {
+      font-size: 22pt;
+      font-weight: 700;
+      letter-spacing: -0.4px;
+      color: #0f172a;
+      line-height: 1.1;
+    }
+
+    .rh-title {
+      font-size: 9.5pt;
+      font-weight: 500;
+      color: #475569;
+      margin-top: 3px;
+    }
+
+    .rh-contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2px 14px;
+      margin-top: 6px;
+      font-size: 8.2pt;
+      color: #64748b;
+    }
+
+    .rh-contact a { color: #1d4ed8; text-decoration: none; }
+
+    /* ─── DIVIDERS ─── */
+    .hr-top {
+      border: none;
+      border-top: 2px solid #1d4ed8;
+      margin: 8px 0 10px;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e2e8f0;
+      margin: 7px 0;
+    }
+
+    /* ─── SECTION TITLES ─── */
+    .st {
+      font-size: 7.5pt;
+      font-weight: 700;
+      letter-spacing: 1.3px;
+      text-transform: uppercase;
+      color: #1d4ed8;
+      margin-bottom: 5px;
+    }
+
+    section { margin-bottom: 8px; }
+    section:last-child { margin-bottom: 0; }
+
+    /* ─── PROFILE ─── */
+    .profile-text {
+      font-size: 9pt;
+      color: #334155;
+      line-height: 1.6;
+    }
+
+    /* ─── AWARDS ─── */
+    .award-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 9pt;
+      padding: 1.5px 0;
+      gap: 8px;
+    }
+
+    .aw-name { font-weight: 600; color: #0f172a; }
+    .aw-org  { color: #475569; font-weight: 400; }
+    .aw-date { font-size: 8pt; color: #64748b; white-space: nowrap; flex-shrink: 0; }
+
+    /* ─── EXPERIENCE ─── */
+    .role { margin-bottom: 7px; }
+
+    .role-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+    }
+
+    .ro-title { font-weight: 600; font-size: 9.5pt; color: #0f172a; }
+    .ro-org   { font-weight: 400; color: #475569; }
+    .ro-dates { font-size: 8pt; color: #64748b; white-space: nowrap; flex-shrink: 0; }
+
+    .role ul  { list-style: none; margin-top: 3px; }
+
+    .role ul li {
+      font-size: 9pt;
+      color: #334155;
+      padding-left: 11px;
+      position: relative;
+      margin-bottom: 1.5px;
+      line-height: 1.55;
+    }
+
+    .role ul li::before {
+      content: '·';
+      position: absolute;
+      left: 2px;
+      color: #1d4ed8;
+      font-weight: 700;
+      font-size: 11pt;
+      line-height: 1.3;
+    }
+
+    /* ─── PROJECTS ─── */
+    .proj { margin-bottom: 5px; }
+
+    .proj-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+    }
+
+    .pr-name { font-weight: 600; font-size: 9.5pt; color: #0f172a; }
+    .pr-link  { font-size: 8pt; color: #1d4ed8; text-decoration: none; white-space: nowrap; flex-shrink: 0; }
+    .pr-desc  { font-size: 9pt; color: #334155; line-height: 1.55; margin-top: 1px; }
+
+    /* ─── PUBLICATIONS & DATASETS ─── */
+    .pub-list { list-style: none; }
+
+    .pub-list li {
+      font-size: 9pt;
+      color: #334155;
+      padding-left: 24px;
+      position: relative;
+      margin-bottom: 2.5px;
+      line-height: 1.5;
+    }
+
+    .ptag {
+      position: absolute;
+      left: 0;
+      top: 1px;
+      font-size: 7pt;
+      font-weight: 700;
+      color: #fff;
+      background: #1d4ed8;
+      padding: 1px 4px;
+      border-radius: 3px;
+      letter-spacing: 0.3px;
+    }
+
+    .ptag.d { background: #0891b2; }
+
+    .pub-title { font-weight: 500; }
+    .pub-meta  { color: #64748b; }
+    .pub-meta a { color: #1d4ed8; text-decoration: none; }
+
+    /* ─── EDUCATION ─── */
+    .edu-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+    }
+
+    .ed-deg   { font-weight: 600; font-size: 9.5pt; color: #0f172a; }
+    .ed-dates { font-size: 8pt; color: #64748b; white-space: nowrap; flex-shrink: 0; }
+    .ed-inst  { font-size: 9pt; color: #475569; margin-top: 1px; }
+    .ed-det   { font-size: 8.5pt; color: #64748b; margin-top: 1px; }
+
+    /* ─── SKILLS ─── */
+    .sk-grid {
+      display: grid;
+      grid-template-columns: 76px 1fr;
+      gap: 2.5px 10px;
+      font-size: 9pt;
+    }
+
+    .sk-cat { font-weight: 600; color: #334155; }
+    .sk-val { color: #475569; }
+
+    /* ─── PRINT ─── */
+    @media print {
+      html { font-size: 10.2pt; }
+      .page { padding: 11mm 15mm 10mm; width: 100%; }
+      a { color: #1d4ed8 !important; }
+      .ptag, .ptag.d { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+
+    @page { size: A4; margin: 0; }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div>
+    <div class="rh-name">Mateenah Jahan</div>
+    <div class="rh-title">AI Researcher in Healthcare &amp; Genomics &nbsp;·&nbsp; Fatima Fellow 2026</div>
+    <div class="rh-contact">
+      <span>jahanmateenah55@gmail.com</span>
+      <a href="https://github.com/MateenahJAHAN">github.com/MateenahJAHAN</a>
+      <a href="https://linkedin.com/in/mateenah-jahan">linkedin.com/in/mateenah-jahan</a>
+      <a href="https://mateenahjahan.github.io">mateenahjahan.github.io</a>
+      <span>New Delhi, India</span>
+    </div>
+  </div>
+
+  <div class="hr-top"></div>
+
+  <!-- PROFILE -->
+  <section>
+    <div class="st">Profile</div>
+    <p class="profile-text">
+      AI researcher specialising in genomic deep learning, computational drug repurposing, and clinical LLM evaluation.
+      Within 12 months of pivoting to full-time research: first-author medRxiv preprint on CAR-T response prediction (AUC&nbsp;0.754),
+      ADA Consortium Biomni-AD Discovery Prize winner, and Fatima Fellow selected from 700+ global applicants.
+      Committed to reproducible, clinically-grounded AI that translates directly into healthcare impact.
+    </p>
+  </section>
+
+  <hr />
+
+  <!-- AWARDS & RECOGNITION -->
+  <section>
+    <div class="st">Awards &amp; Recognition</div>
+
+    <div class="award-row">
+      <span>
+        <span class="aw-name">Fatima Fellow 2026</span>
+        <span class="aw-org"> &nbsp;·&nbsp; Fatima Institute, Globalizing AI Research &nbsp;— selected from 700+ applicants worldwide</span>
+      </span>
+      <span class="aw-date">Apr 2026</span>
+    </div>
+
+    <div class="award-row">
+      <span>
+        <span class="aw-name">ADA Consortium Discovery Prize &nbsp;·&nbsp; Round 1 Winner</span>
+        <span class="aw-org"> &nbsp;— Biomni-AD: AI-driven Alzheimer's Drug Repurposing</span>
+      </span>
+      <span class="aw-date">Mar 2026</span>
+    </div>
+
+    <div class="award-row">
+      <span>
+        <span class="aw-name">Merit Scholar</span>
+        <span class="aw-org"> &nbsp;·&nbsp; Woolf / Scaler Neovarsity, MSc Artificial Intelligence &amp; Machine Learning</span>
+      </span>
+      <span class="aw-date">Jan 2025</span>
+    </div>
+  </section>
+
+  <hr />
+
+  <!-- RESEARCH EXPERIENCE -->
+  <section>
+    <div class="st">Research Experience</div>
+
+    <div class="role">
+      <div class="role-head">
+        <div>
+          <span class="ro-title">Fatima Fellow</span>
+          <span class="ro-org"> &nbsp;·&nbsp; Fatima Institute, Globalizing AI Research</span>
+        </div>
+        <span class="ro-dates">Apr 2026 – Present &nbsp;· Remote (International)</span>
+      </div>
+      <ul>
+        <li>Evaluated Google MedGemma-4B (PT and IT variants) on hematologic oncology and CAR-T immunotherapy prompts; surfaced hallucinated ZUMA-7 trial statistics, clinically dangerous DLBCL misdiagnosis, and fabricated regimens absent from any clinical guideline.</li>
+        <li>Released a 13-probe reproducible evaluation dataset on HuggingFace (CC-BY-4.0, 13 probes); ground truth anchored to NEJM 2023/2025 and Blood Advances 2025.</li>
+      </ul>
+    </div>
+
+    <div class="role">
+      <div class="role-head">
+        <div>
+          <span class="ro-title">Research Trainee</span>
+          <span class="ro-org"> &nbsp;·&nbsp; CSIR-IGIB (Council of Scientific and Industrial Research)</span>
+        </div>
+        <span class="ro-dates">Aug 2025 – Mar 2026 &nbsp;·&nbsp; New Delhi, India</span>
+      </div>
+      <ul>
+        <li>Engineered a reproducible DeepTCR pipeline for CD19 CAR-T therapy response prediction in B-cell lymphoma; achieved AUC&nbsp;0.754 with responder-enriched TCR clusters identified via unsupervised analysis on H100 GPU.</li>
+        <li>First-author preprint submitted to medRxiv (Mar 2026); modernised open-source DeepTCR framework for TensorFlow 2.12 compatibility and validated all 11 tutorials end-to-end.</li>
+        <li>Presented poster — <em>Attention-Based TCR Sequence Signals in CAR-T Outcomes</em> — at CSIR-IGIB Research Day (Feb 2026).</li>
+      </ul>
+    </div>
+  </section>
+
+  <hr />
+
+  <!-- SELECTED PROJECTS -->
+  <section>
+    <div class="st">Selected Projects</div>
+
+    <div class="proj">
+      <div class="proj-head">
+        <span class="pr-name">Biomni-AD &nbsp;·&nbsp; AI-Driven Alzheimer's Drug Repurposing</span>
+        <a class="pr-link" href="https://github.com/MateenahJAHAN/biomni-ad-drug-repurposing">github.com/MateenahJAHAN/biomni-ad-drug-repurposing</a>
+      </div>
+      <p class="pr-desc">ADA Consortium prize-winning submission. Deployed Biomni AI agents on ADDI AD Workbench to cross-reference 21 AD GWAS risk genes against drug–target databases, producing ranked repurposing candidates with pathway-level validation and novel-target convergence network analysis.</p>
+    </div>
+
+    <div class="proj">
+      <div class="proj-head">
+        <span class="pr-name">Synapse MCP &nbsp;·&nbsp; GPCR Ligand Discovery Server</span>
+        <a class="pr-link" href="https://github.com/MateenahJAHAN/BoldConnect">github.com/MateenahJAHAN/BoldConnect</a>
+      </div>
+      <p class="pr-desc">Production-ready FastMCP server enabling AI agents to screen ligand libraries, assess GPCR mutation impact, and query the BOLD-GPCR database via standardised MCP tool calls; dockerised runtime with an approved-drug demo library.</p>
+    </div>
+  </section>
+
+  <hr />
+
+  <!-- PUBLICATIONS & DATASETS -->
+  <section>
+    <div class="st">Publications &amp; Datasets</div>
+    <ul class="pub-list">
+
+      <li>
+        <span class="ptag">P</span>
+        <span class="pub-title">Predicting CD19 CAR-T Response with DeepTCR Representations</span>
+        <span class="pub-meta"> — First author &nbsp;·&nbsp; medRxiv preprint (pending PI approval) &nbsp;·&nbsp; Mar 2026</span>
+      </li>
+
+      <li>
+        <span class="ptag d">D</span>
+        <span class="pub-title">MedGemma Blind Spots: Hematologic Oncology &amp; CAR-T</span>
+        <span class="pub-meta"> — Dataset curator &nbsp;·&nbsp; HuggingFace &nbsp;·&nbsp; CC-BY-4.0 &nbsp;·&nbsp; Apr 2026 &nbsp;·&nbsp;
+          <a href="https://huggingface.co/datasets/Mateenah/medgemma-4b-hematologic-oncology-blind-spots">hf.co/datasets/Mateenah/medgemma-4b-hematologic-oncology-blind-spots</a>
+        </span>
+      </li>
+
+      <li>
+        <span class="ptag d">D</span>
+        <span class="pub-title">Biomni-AD Drug Repurposing Agent v1.0</span>
+        <span class="pub-meta"> — Lead developer &nbsp;·&nbsp; GitHub &nbsp;·&nbsp; ADA Consortium prize submission &nbsp;·&nbsp; Mar 2026</span>
+      </li>
+
+    </ul>
+  </section>
+
+  <hr />
+
+  <!-- EDUCATION -->
+  <section>
+    <div class="st">Education</div>
+
+    <div class="edu-head">
+      <span class="ed-deg">MSc Computer Science: Artificial Intelligence &amp; Machine Learning</span>
+      <span class="ed-dates">Jan 2025 – Jul 2026 (expected)</span>
+    </div>
+    <div class="ed-inst">Woolf / Scaler Neovarsity &nbsp;·&nbsp; EQF Level 7</div>
+    <div class="ed-det">GPA 4.0 &nbsp;·&nbsp; 11 modules completed &nbsp;·&nbsp; 100% average &nbsp;·&nbsp; 55 ECTS &nbsp;·&nbsp; Merit Scholar</div>
+
+    <div class="ed-det" style="margin-top:5px; color:#475569;">
+      <strong>Relevant certifications:</strong>
+      Introduction to Genomic Technologies &nbsp;·&nbsp; Python for Genomic Data Science — Johns Hopkins University / Coursera (2024–2025)
+    </div>
+  </section>
+
+  <hr />
+
+  <!-- SKILLS -->
+  <section>
+    <div class="st">Skills</div>
+    <div class="sk-grid">
+      <span class="sk-cat">Research</span>
+      <span class="sk-val">DeepTCR &nbsp;·&nbsp; Biomni framework &nbsp;·&nbsp; GWAS analysis &nbsp;·&nbsp; Drug repurposing &nbsp;·&nbsp; TCR repertoire analysis &nbsp;·&nbsp; Clinical LLM evaluation &nbsp;·&nbsp; ADDI AD Workbench</span>
+
+      <span class="sk-cat">ML / DL</span>
+      <span class="sk-val">Python &nbsp;·&nbsp; PyTorch &nbsp;·&nbsp; TensorFlow &nbsp;·&nbsp; HuggingFace Transformers &nbsp;·&nbsp; scikit-learn &nbsp;·&nbsp; Supervised &amp; unsupervised learning &nbsp;·&nbsp; GPU-accelerated training (H100)</span>
+
+      <span class="sk-cat">Engineering</span>
+      <span class="sk-val">FastMCP &nbsp;·&nbsp; Model Context Protocol &nbsp;·&nbsp; SQL &nbsp;·&nbsp; Git / GitHub &nbsp;·&nbsp; Docker &nbsp;·&nbsp; Reproducible research workflows</span>
+
+      <span class="sk-cat">Data</span>
+      <span class="sk-val">Tableau &nbsp;·&nbsp; Google BigQuery &nbsp;·&nbsp; Statistical analysis &nbsp;·&nbsp; A/B testing &nbsp;·&nbsp; Python ETL</span>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>
