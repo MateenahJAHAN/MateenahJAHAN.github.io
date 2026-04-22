@@ -274,7 +274,7 @@ a {
   padding: 14px 14px 0;
 }
 
-.carousel-slide {
+.carousel-slide:not(.active) {
   display: none;
 }
 
