@@ -61,3 +61,33 @@ for (const link of navLinks) {
 if (navLinks.length > 0) {
   setActiveLink(navLinks[0]);
 }
+
+(function initCarousel() {
+  const carousel = document.getElementById('heroCarousel');
+  if (!carousel) return;
+
+  const slides = Array.from(carousel.querySelectorAll('.carousel-slide'));
+  const dots = Array.from(carousel.querySelectorAll('.carousel-dot'));
+  let current = 0;
+  let timer;
+
+  function show(n) {
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = ((n % slides.length) + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+  }
+
+  function start() { timer = setInterval(() => show(current + 1), 4000); }
+  function stop() { clearInterval(timer); }
+
+  carousel.querySelector('.carousel-next').addEventListener('click', () => { stop(); show(current + 1); start(); });
+  carousel.querySelector('.carousel-prev').addEventListener('click', () => { stop(); show(current - 1); start(); });
+  dots.forEach((dot, i) => dot.addEventListener('click', () => { stop(); show(i); start(); }));
+
+  carousel.addEventListener('mouseenter', stop);
+  carousel.addEventListener('mouseleave', start);
+
+  start();
+})();
