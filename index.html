@@ -1035,6 +1035,30 @@
             </article>
 
             <article class="card project-featured">
+              <h3>Refusal Categories · Mech Interp Probe</h3>
+              <p>
+                Does refusal decompose by harm category, or is one direction
+                doing all the work? Extends Arditi et al. (NeurIPS 2024) with
+                per-category refusal directions, a permutation null model, and
+                cross-category ablation transfer. Harness built and calibrated
+                against synthetic ground truth; model runs next.
+              </p>
+              <div class="project-featured-chips">
+                <span>Mechanistic Interpretability</span>
+                <span>Refusal Directions</span>
+                <span>BlueDot Sprint</span>
+              </div>
+              <a
+                class="link"
+                href="https://github.com/MateenahJAHAN/refusal-categories"
+                target="_blank"
+                rel="noopener"
+              >
+                Repository
+              </a>
+            </article>
+
+            <article class="card project-featured">
               <h3>MedGemma Blind Spots Evaluation</h3>
               <p>
                 Documented five structural failure modes of MedGemma-4B in
@@ -1274,6 +1298,146 @@
                   <span>
                     Independent audit of agent methodology with experimental
                     validation proposals for top candidates.
+                  </span>
+                </li>
+              </ul>
+            </article>
+
+            <article class="card journey-card">
+              <div class="journey-header">
+                <div class="journey-icon">
+                  <img src="assets/icons/ai.svg" alt="" aria-hidden="true" />
+                </div>
+                <div>
+                  <h3>
+                    Refusal Categories: Does Refusal Decompose by Harm Type?
+                  </h3>
+                  <p>
+                    A mechanistic-interpretability probe of refusal-direction
+                    structure in instruct-tuned language models. Arditi et al.
+                    (NeurIPS 2024) showed refusal is mediated by a single
+                    direction in the residual stream — but that experiment
+                    pooled every harm type into one set, so by construction it
+                    recovered one direction. Whether cybercrime,
+                    chemical/biological, misinformation and illegal requests
+                    have distinct refusal directions has never been measured.
+                  </p>
+                </div>
+              </div>
+              <div class="journey-tags">
+                <span>Mechanistic interpretability</span>
+                <span>Refusal directions</span>
+                <span>Activation steering</span>
+                <span>Permutation testing</span>
+                <span>Qwen2.5-1.5B-Instruct</span>
+              </div>
+              <p class="journey-meta">
+                Extracts a refusal direction per harm category by
+                difference-in-means against a shared harmless set, with the
+                pooled direction as the reference point, then compares them by
+                cosine similarity and tests them behaviourally through
+                cross-category ablation transfer and activation addition.
+                Harmful prompts come from HarmBench standard behaviors, four
+                categories balanced to 28 each; harmless prompts from Alpaca;
+                20 train / 8 validation per category, seed 20261024. Runs end
+                to end in about 40 minutes on a free Colab T4.
+              </p>
+              <div class="journey-actions">
+                <a
+                  class="btn primary"
+                  href="https://github.com/MateenahJAHAN/refusal-categories"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  View repository
+                </a>
+              </div>
+              <ul class="journey-list">
+                <li>
+                  <span>
+                    <strong>Every outcome is a finding.</strong> One shared
+                    direction would mean safety training is shallower than the
+                    pooled result implies, since a single ablation removes
+                    refusal across every harm type at once. Category-specific
+                    directions would mean harm types can be monitored or steered
+                    independently. Separable geometry with interchangeable
+                    behaviour is the most interesting case of the three, and
+                    there is no null-result risk in any of them.
+                  </span>
+                </li>
+                <li>
+                  <span>
+                    <strong>The null model is the load-bearing step.</strong>
+                    Every category direction is a harmful-minus-harmless
+                    contrast, so all of them share a generic “this request is
+                    harmful” component and cosine similarities will look high
+                    whether or not category structure exists. The same harmful
+                    pool is randomly relabelled into pseudo-categories and the
+                    statistic recomputed; real categories count as distinct only
+                    if they sit clearly below that value.
+                  </span>
+                </li>
+                <li>
+                  <span>
+                    <strong>Instrument calibrated before touching real
+                    data.</strong> The permutation test was validated on
+                    synthetic activations with the answer built in. With no
+                    structure at all it fired 6.7% of the time against a ~5%
+                    target; with weak structure and with fully category-specific
+                    directions it fired 100%. Calibrated, but powerful enough to
+                    flag even trivial structure — so the effect size and the
+                    transfer matrix carry the conclusion, not the p-value.
+                  </span>
+                </li>
+                <li>
+                  <span>
+                    <strong>One run would have been misleading.</strong> On the
+                    first calibration run the detector flagged structure in data
+                    built with none. It looked like a bug; 200 replications
+                    showed the test was correctly calibrated and that run was an
+                    unlucky seed. A single run would have meant either chasing a
+                    non-existent bug or shipping a false positive.
+                  </span>
+                </li>
+                <li>
+                  <span>
+                    <strong>Safety handling.</strong> Prompts come only from
+                    published safety benchmarks; none were written for this work.
+                    Completions are scored programmatically by
+                    refusal-substring matching and are never printed or saved,
+                    and no modified weights are written to disk or distributed.
+                    The activation-addition half of the experiment is
+                    safety-positive by construction — it makes the model more
+                    cautious, and it is what establishes the direction is causal
+                    rather than merely correlated.
+                  </span>
+                </li>
+                <li>
+                  <a
+                    href="https://arxiv.org/abs/2406.11717"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    Arditi et al., Refusal in Language Models Is Mediated by a
+                    Single Direction (NeurIPS 2024)
+                  </a>
+                  <span>
+                    The result this work extends; it held across 13 models up to
+                    72B. Stated limitations here: one model at one size, a layer
+                    sweep narrowed to the middle band at the final
+                    post-instruction token, 48 generated tokens against the
+                    paper's 512, refusal-substring scoring only, and n = 8 per
+                    transfer cell — wide intervals that show direction of
+                    effect, not a precise estimate.
+                  </span>
+                </li>
+                <li>
+                  <span>
+                    Status: harness built and validated, results pending.
+                    Developed during the BlueDot Impact Technical AI Safety
+                    Project Sprint, October 2026. Released under MIT; the
+                    benchmark datasets remain the work of their original authors
+                    and none are redistributed.
                   </span>
                 </li>
               </ul>
@@ -1647,6 +1811,32 @@
               <a
                 class="link"
                 href="https://github.com/MateenahJAHAN/biomni-ad-drug-repurposing"
+                target="_blank"
+                rel="noopener"
+              >
+                GitHub repository
+              </a>
+            </article>
+
+            <article class="card project">
+              <div class="project-cover cover-ai">
+                <div class="cover-label">
+                  <img src="assets/icons/ai.svg" alt="" aria-hidden="true" />
+                  <span>Interpretability</span>
+                </div>
+              </div>
+              <h3>Refusal Direction Structure by Harm Category</h3>
+              <p>
+                Per-category refusal directions, a permutation null model, and
+                cross-category ablation transfer in Qwen2.5-1.5B-Instruct.
+                Harness validated; results pending.
+              </p>
+              <p class="stack">
+                Tools: HarmBench, Alpaca, Qwen2.5-1.5B-Instruct, Colab T4
+              </p>
+              <a
+                class="link"
+                href="https://github.com/MateenahJAHAN/refusal-categories"
                 target="_blank"
                 rel="noopener"
               >
@@ -2406,6 +2596,29 @@
             </article>
 
             <article class="repo-group">
+              <h3>AI safety and interpretability</h3>
+              <ul class="repo-list">
+                <li>
+                  <a
+                    class="repo-link"
+                    href="https://github.com/MateenahJAHAN/refusal-categories"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <span class="repo-title">
+                      Refusal direction structure by harm category
+                    </span>
+                    <span class="repo-note">
+                      Per-category difference-in-means directions, permutation
+                      null model, and cross-category ablation transfer; extends
+                      Arditi et al. (NeurIPS 2024).
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </article>
+
+            <article class="repo-group">
               <h3>Portfolio</h3>
               <ul class="repo-list">
                 <li>
@@ -2428,6 +2641,12 @@
           <details class="repo-details">
             <summary>View full repository list</summary>
             <div class="repo-grid">
+              <div class="repo-item">
+                <a href="https://github.com/MateenahJAHAN/refusal-categories">
+                  refusal-categories
+                </a>
+                <span class="tag">public</span>
+              </div>
               <div class="repo-item">
                 <a href="https://github.com/MateenahJAHAN/MateenahJAHAN.github.io">
                   MateenahJAHAN.github.io
