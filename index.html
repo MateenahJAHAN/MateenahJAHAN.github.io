@@ -63,11 +63,11 @@
 </div>
 <details class="research-bio">
 <summary>More about my research and training</summary>
-<p>For the fellowship I screened 50 compounds in CMap against sex-biased genes from 44 GTEx tissues. Seventeen compounds were enriched in at least one tissue. When I counted the cell lines behind the strongest category, about 91% of its profiles came from female-donor lines, although it held 17 female-donor and 18 male-donor lines. The female-donor lines had been profiled about 11 times as often, so the screen could not separate sex from sampling. That sampling difference led me to ask what a donor label can tell us about the cells in culture.</p>
-<p>Before that I was a research trainee at the Council of Scientific and Industrial Research’s Institute of Genomics and Integrative Biology (CSIR-IGIB) with <a href="https://igib.res.in/Scientists/sherry-bhalla">Dr. Sherry Bhalla</a>. I trained <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7952906/">DeepTCR</a> models on 239,637 TCRβ sequences from 34 patients to study response to CD19 CAR-T therapy. When whole patients were held out, the model did not reliably predict response. The <a href="#project-deeptcr">project notes</a> explain why. I also helped update DeepTCR for Python 3.10 and TensorFlow 2.12, as noted in its <a href="https://github.com/sidhomj/DeepTCR/commit/715f6642292a296aa22ffba1b219908fd5af5c5f">release notes</a>.</p>
+<p>For the fellowship I screened 50 compounds in CMap against sex-biased genes from 44 GTEx tissues. Of 39,996 possible compound–lineage–tissue comparisons, 6,122 could be tested. Seventeen compounds showed enrichment in at least one tissue. When I counted the cell lines behind the strongest category, about 91% of its profiles came from female-donor lines, although it held 17 female-donor and 18 male-donor lines. The female-donor lines had been profiled about 11 times as often, so the screen could not separate sex from sampling. That sampling difference led me to ask what a donor label can tell us about the cells in culture.</p>
+<p>Before that I was a research trainee at the Council of Scientific and Industrial Research’s Institute of Genomics and Integrative Biology (CSIR-IGIB) with <a href="https://igib.res.in/Scientists/sherry-bhalla">Dr. Sherry Bhalla</a>. I trained <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7952906/">DeepTCR</a> models using paired-chain sequencing data from 34 patients to study response to CD19 CAR-T therapy. When whole patients were held out, the model did not reliably predict response. The <a href="#project-deeptcr">patient-held-out evaluation</a> shows how the choice of split changed the result. I also helped update DeepTCR for Python 3.10 and TensorFlow 2.12, as noted in its <a href="https://github.com/sidhomj/DeepTCR/commit/715f6642292a296aa22ffba1b219908fd5af5c5f">release notes</a>.</p>
 <p>I earned my <a href="#education">MSc in Computer Science: Artificial Intelligence and Machine Learning</a> from Woolf through Scaler Neovarsity, with a <strong>4.0/4.0 GPA and 90 ECTS credits</strong>.</p>
 <p>For the ADA Consortium’s Biomni-AD challenge I ran a <a href="#project-biomni">Biomni agent workflow</a> that proposed ten Alzheimer’s drug repurposing hypotheses. The entry was one of three <a href="https://www.adaconsortium.com/competition">winners of the Round 1 Biomni-AD Discovery Prize</a>.</p>
-<p>I also work on how language models behave. My <a href="#project-tara">TARA project</a> asks when a model calls a tool it doesn’t need, and my <a href="#project-refusal">BlueDot Impact project</a> asked whether refusal directions differ by harm category.</p>
+<p>I also work on how language models behave. My <a href="#project-tara">TARA project</a> asks when a model calls a tool it doesn’t need, and my <a href="#project-refusal">BlueDot Impact project</a> tests how question wording changes a model’s decision to refuse.</p>
 </details>
 </div>
 <figure class="profile-card">
@@ -115,7 +115,7 @@
 </details>
 </div>
 <div class="map-fallback">
-<ul><li><a href="#project-59">Fellowship manuscript</a></li><li><a href="#project-deeptcr">DeepTCR results and code</a></li><li><a href="#project-tara">TARA results</a></li><li><a href="#project-medgemma">MedGemma dataset</a></li><li><a href="#applied-ml">Applied Machine Learning</a></li></ul>
+<ul><li><a href="#project-59">Fellowship manuscript</a></li><li><a href="#project-deeptcr">DeepTCR results and code</a></li><li><a href="#project-tara">TARA results</a></li><li><a href="#project-medgemma">MedGemma dataset</a></li><li><a href="#project-myeloma">Myeloma genomics workflow</a></li><li><a href="#applied-ml">Applied Machine Learning</a></li></ul>
 </div>
 </div>
 </section>
@@ -130,6 +130,7 @@
 <nav class="research-index" aria-label="Research areas">
 <a href="#biological-research">Computational biology</a>
 <a href="#interpretability-research">AI interpretability</a>
+<a href="#research-software">Research software</a>
 </nav>
 <div id="research-output">
 <h3 class="research-area" id="biological-research">Computational biology</h3>
@@ -137,7 +138,7 @@
 <article class="card project-featured" id="project-59">
 <h4>Sex-chromosome expression and annotated donor sex in drug-perturbation cell lines</h4>
 <p>Of 49 Tahoe-100M cell lines with a recorded donor sex, 27 lacked the expected Y-gene or XIST expression pattern. Bulk RNA sequencing from other cultures agreed with the measured patterns in 47 of 49 lines. The study compiled expression records for 1,123 cell lines.</p>
-<p class="research-meta" id="project-59-details">Tests of gene-expression responses to 114 LINCS2020 compounds across 41 cell lines were inconclusive. The intervals were wide, and the XIST comparison also differed in the vehicle control.</p>
+<p class="research-meta" id="project-59-details">Tests of gene-expression responses to 114 LINCS2020 compounds across 41 cell lines were inconclusive. The intervals were wide, and the XIST comparison also differed in the vehicle control. In the treated Tahoe cultures, COLO 205 accounted for 773 of 792 disagreements with the vehicle marker calls.</p>
 <div class="project-links">
 <a class="link" href="assets/papers/fellowship-manuscript.pdf">Manuscript (PDF)</a>
 <a class="link" href="assets/papers/fellowship-supplement.pdf">Supplement (PDF)</a>
@@ -155,16 +156,16 @@
 </details>
 </article><article class="card project-featured" id="project-deeptcr">
 <h4>Predicting CD19 CAR-T response with DeepTCR</h4>
-<p>At CSIR-IGIB (Aug 2025 to Jan 2026, with Dr. Sherry Bhalla) I trained DeepTCR classifiers on 239,637 TCRβ sequences from 34 patients with B-cell lymphoma, 18 of whom responded to CD19 CAR-T therapy. I also helped update the framework for Python 3.10 and TensorFlow 2.12.</p>
-<p>With whole patients held out, the median AUROC was 0.456 across ten evaluations. The model did not reliably predict response in a new patient.</p>
+<p>At CSIR-IGIB (Aug 2025 to Jan 2026, with Dr. Sherry Bhalla) I trained DeepTCR classifiers on beta-chain sequences from 34 patients with B-cell lymphoma, 18 of whom responded to CD19 CAR-T therapy. I also helped update the framework for Python 3.10 and TensorFlow 2.12.</p>
+<p>The published evaluation scored 239,634 eligible sequence records. Holding out whole patients gave a median AUROC of 0.456 across ten evaluations. The model did not reliably predict response in a new patient.</p>
 <div class="project-links">
-<a class="link" href="https://github.com/MateenahJAHAN/Final_Deliverable_DeepTCRResearch_Mateenah_Jahan_CSIR/blob/773b8c4d4de3006344b10b796491418325870207/validation/repeated-patient-cv/REPORT.md">Results</a>
-<a class="link" href="https://github.com/MateenahJAHAN/Final_Deliverable_DeepTCRResearch_Mateenah_Jahan_CSIR/blob/ce1fa3a421edb9f4025a45cb79dc7b014867ad83/paper/main.pdf">Trainee report (January 2026)</a>
+<a class="link" href="https://github.com/MateenahJAHAN/Final_Deliverable_DeepTCRResearch_Mateenah_Jahan_CSIR/blob/main/validation/repeated-patient-cv/REPORT.md">Results</a>
+<a class="link" href="https://github.com/MateenahJAHAN/Final_Deliverable_DeepTCRResearch_Mateenah_Jahan_CSIR/blob/main/paper/main.pdf">Research paper (PDF)</a>
 <a class="link" href="https://github.com/MateenahJAHAN/Deep-TCR---All-tutorial-working">Code and tutorials</a>
 <a class="link" href="https://github.com/sidhomj/DeepTCR/commit/715f6642292a296aa22ffba1b219908fd5af5c5f">DeepTCR release notes</a>
 </div>
 
-<figure class="research-figure"><a href="https://github.com/MateenahJAHAN/Final_Deliverable_DeepTCRResearch_Mateenah_Jahan_CSIR/blob/773b8c4d4de3006344b10b796491418325870207/figures/correction/repeated-patient-auroc.png"><img src="assets/research/deeptcr-repeated-patient-auroc.png" width="2340" height="855" loading="lazy" decoding="async" alt="Within-fold patient AUROC for DeepTCR with two training seeds and for a composition baseline, across five patient splits. Most points fall below 0.5."></a><figcaption>DeepTCR and a composition baseline across patient-held-out splits</figcaption></figure>
+<figure class="research-figure"><a href="https://github.com/MateenahJAHAN/Final_Deliverable_DeepTCRResearch_Mateenah_Jahan_CSIR/blob/main/figures/correction/repeated-patient-auroc.png"><img src="assets/research/deeptcr-repeated-patient-auroc.png" width="2340" height="855" loading="lazy" decoding="async" alt="Within-fold patient AUROC for DeepTCR with two training seeds and for a composition baseline, across five patient splits. Most points fall below 0.5."></a><figcaption>DeepTCR and a composition baseline across patient-held-out splits</figcaption></figure>
 <details class="project-evidence">
 <summary>How the validation changed the result</summary>
 <p class="research-meta">My trainee report gave an AUC of 0.754. That figure came from a split by sequence, so each patient’s sequences appeared in both training and test, and it does not measure prediction for new patients. In November 2026 the model was re-evaluated with whole patients held out, using AI coding agents. Across ten five-fold evaluations the median AUROC was 0.456 (range 0.298–0.579), against 0.386 for a matched composition baseline. With 34 patients, this did not show that the model predicts response.</p>
@@ -191,29 +192,44 @@
 <div class="project-featured-grid">
 <article class="card project-featured" id="project-tara">
 <h4>When does a language model call a tool it doesn’t need?</h4>
-<p>For my TARA project, two small Qwen models were given the same tools in two ways: as a plain-text list and through the model’s native tool interface. On 20 paired requests, the native interface produced more calls to tools the request did not need on both models: 19/20 against 14/20 for Qwen2.5 1.5B, and 10/20 against 0/20 for Qwen3.5 4B.</p>
+<p>Does a model read what a tool can do, or does a familiar word prompt it to call the tool? In my TARA study, Qwen2.5 sometimes called an out-of-area service when its documentation office happened to be in the requested district. The effect disappeared on 12 questions drawn from two independent tool-use benchmarks: matching the office city changed false calls from four to three.</p>
 <p class="research-meta">An activation-steering test at a small strength (0.01) left unneeded calls at 2/8 on a held-out Qwen2.5 set, so it does not show whether steering can help. Claude Code drafted the study design and code, and AI coding assistants helped run the experiments.</p>
 <div class="project-links">
 <a class="link" href="https://github.com/MateenahJAHAN/tara-chat-tool-study/blob/main/followup_v3_tool_documentation/TARA_Tool_Applicability.pdf">Tool descriptions paper (PDF)</a>
-<a class="link" href="https://github.com/MateenahJAHAN/tara-chat-tool-study/blob/main/followup_v2_tool_applicability/RESULTS.md">Paired-request results</a>
+<a class="link" href="https://github.com/MateenahJAHAN/tara-chat-tool-study/blob/main/followup_v2_tool_applicability/RESULTS.md">Earlier paired requests</a>
+<a class="link" href="https://github.com/MateenahJAHAN/tara-chat-tool-study/blob/main/followup_v3_tool_documentation/independent_descriptions/catalogue_pairs.csv">Independent benchmark pairs</a>
 <a class="link" href="https://github.com/MateenahJAHAN/tara-chat-tool-study">Code</a>
 </div>
+<figure class="research-figure"><a href="https://github.com/MateenahJAHAN/tara-chat-tool-study/blob/main/followup_v3_tool_documentation/independent_descriptions/catalogue_office_pairs.png"><img src="assets/research/tara-office-city.png" width="2046" height="1232" loading="lazy" decoding="async" alt="Each paired point compares attempted tool calls on an external city question when the documentation office matches or differs from the requested city."></a><figcaption>Tool calls on independent city questions</figcaption></figure>
 <details class="project-evidence">
-<summary>First experiment</summary>
+<summary>Earlier tool-interface experiment</summary>
 <p>On 32 held-out requests where no tool applied, Qwen2.5 made 9 unneeded calls with the text list and 16 with native tools. <a href="https://github.com/MateenahJAHAN/tara-chat-tool-study/blob/main/study_v1/RESULTS.txt">Results</a></p>
 <figure><a href="https://github.com/MateenahJAHAN/tara-chat-tool-study/blob/main/reporting/figures_heldout_final/01_behaviour_rates.png"><img src="assets/research/tara-held-out.png" width="1801" height="854" loading="lazy" decoding="async" alt="Rates of tool calls and abstention for the text list and native tool interfaces on the TARA study’s held-out cases."></a><figcaption>Tool calls on held-out requests</figcaption></figure>
 </details>
 </article><article class="card project-featured" id="project-refusal">
-<h4>Do harm categories have different refusal directions?</h4>
-<p>For the BlueDot Impact project sprint I asked whether Qwen2.5-1.5B-Instruct has one refusal direction or a separate one for each kind of harmful request. I estimated a direction for each of four harm categories. They were less alike than after shuffling the category labels (mean cosine similarity 0.84 against 0.98, p = 0.003).</p>
-<p class="research-meta">Each direction also shifted the model’s answers on harmless prompts (KL divergence 0.13 to 1.68), so I can’t yet say they are specific to refusal. AI coding assistants helped with the code and the write-up.</p>
+<h4>When does a model refuse a harmless question?</h4>
+<p>In my BlueDot Impact project I tested whether a change in wording could make a model decline an answerable question. Across the same 30 names, Qwen2.5 cited politics in 20 replies to “When did … become a billionaire?” and four to “In what year did … become a billionaire?” SmolLM2 gave no full refusals across all 180 replies. Two blinded AI readers scored refusal behavior. They did not verify the dates.</p>
 <div class="project-links">
 <a class="link" href="https://github.com/MateenahJAHAN/refusal-categories/blob/main/followup_v2_refusal_measurement/BlueDot_Refusal_Measurement.pdf">Refusal measurement paper (PDF)</a>
+<a class="link" href="https://github.com/MateenahJAHAN/refusal-categories/blob/main/followup_v2_refusal_measurement/smol_names/person_pairs.csv">Paired responses by person</a>
 <a class="link" href="https://github.com/MateenahJAHAN/refusal-categories">Code</a>
 <a class="link" href="https://huggingface.co/datasets/Mateenah/refusal-categories-results/blob/917856ed158f4dcb70ade8b5a49f0cf4accce71c/results_v0.2.json">Results (JSON)</a>
 <a class="link" href="https://github.com/MateenahJAHAN/refusal-categories#kl-gate-replay">Harmless-prompt check</a>
 </div>
-</article></div></div></div>
+<figure class="research-figure"><a href="https://github.com/MateenahJAHAN/refusal-categories/blob/main/followup_v2_refusal_measurement/smol_names/model_comparison.png"><img src="assets/research/bluedot-wording.png" width="2510" height="1174" loading="lazy" decoding="async" alt="Full refusals and refusals citing politics for Qwen2.5 and SmolLM2 across three pairs of question wordings about 30 names."></a><figcaption>Refusals across six question wordings</figcaption></figure>
+<details class="project-evidence"><summary>Earlier activation study</summary><p>I estimated four refusal directions in Qwen2.5. Their mean cosine similarity was 0.84, compared with 0.98 after shuffling the category labels. Each direction also changed answers on harmless prompts, leaving its specificity to refusal unresolved. AI coding assistants helped with the code and the write-up.</p></details>
+
+</article></div>
+<h3 class="research-area" id="research-software">Research software</h3>
+<article class="card project-featured" id="project-myeloma">
+<h4>GPU-accelerated genomics for multiple myeloma</h4>
+<p>In an academic collaboration with a computational scientist at the Icahn School of Medicine at Mount Sinai, I worked on a sequencing workflow used by the Multiple Myeloma division. I helped integrate NVIDIA Parabricks on H100 GPUs, annotate cancer variants with CIViC evidence, and write the functions that turn TSV and CSV outputs into a final research report.</p>
+<div class="project-links">
+<a class="link" href="https://github.com/MateenahJAHAN/myeloma-genomics-parabricks">My contribution</a>
+<a class="link" href="https://pan-theory-37309626.figma.site/">Workflow architecture</a>
+</div>
+</article>
+</div></div>
 </section>
 <section class="section alt" id="applied-ml">
 <div class="container">
@@ -343,7 +359,7 @@
 <h2>Skills</h2>
 </div>
 </div>
-<p class="skills-summary">Python, SQL, TensorFlow, PyTorch, and statistical analysis for genomics.</p>
+<p class="skills-summary">Python, SQL, TensorFlow, PyTorch, and <a href="#project-myeloma">GPU-accelerated genomics with NVIDIA Parabricks</a>.</p>
 <details class="secondary-disclosure skills-disclosure">
 <summary>Research methods and tools</summary>
 <div class="skills-grid">
@@ -361,7 +377,7 @@
 </div>
 <div class="card skill-group">
 <div class="skill-header"><img alt="" aria-hidden="true" src="assets/icons/project.svg"/><h3>Research software</h3></div>
-<div class="chips"><span>Git and GitHub Actions</span><span>Biomni</span><span>FastMCP</span></div>
+<div class="chips"><span>Git and GitHub Actions</span><span>Biomni</span><span>FastMCP</span><span>NVIDIA Parabricks on H100 GPUs</span><span>CIViC variant annotation</span></div>
 </div>
 </div>
 </details>

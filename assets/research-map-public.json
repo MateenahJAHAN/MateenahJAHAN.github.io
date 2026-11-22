@@ -33,7 +33,7 @@
       "group": "Computational biology",
       "figure": {
         "src": "assets/research/deeptcr-repeated-patient-auroc.png",
-        "source": "https://github.com/MateenahJAHAN/Final_Deliverable_DeepTCRResearch_Mateenah_Jahan_CSIR/blob/773b8c4d4de3006344b10b796491418325870207/validation/repeated-patient-cv/REPORT.md",
+        "source": "https://github.com/MateenahJAHAN/Final_Deliverable_DeepTCRResearch_Mateenah_Jahan_CSIR/blob/main/validation/repeated-patient-cv/REPORT.md",
         "alt": "Patient-held-out AUROC across five splits for DeepTCR and a composition baseline.",
         "caption": "Patient-held-out model evaluation",
         "width": 2340,
@@ -84,31 +84,39 @@
       "id": "refusal_study",
       "label": "Do models refuse harmless questions?",
       "type": "project",
-      "summary": "The BlueDot study examined refusal directions and tested what two models actually said in response to benign questions.",
+      "summary": "For the same 30 names, changing “When did” to “In what year did” reduced political refusals from 20 to four in Qwen2.5. SmolLM2 gave zero full refusals in 180 replies.",
       "source_ids": [
-        "benign",
+        "bluedot_paired",
         "refusal"
       ],
-      "group": "AI interpretability and evaluation"
+      "group": "AI interpretability and evaluation",
+      "figure": {
+        "src": "assets/research/bluedot-wording.png",
+        "source": "https://github.com/MateenahJAHAN/refusal-categories/blob/main/followup_v2_refusal_measurement/smol_names/model_comparison.png",
+        "caption": "Refusals across six question wordings",
+        "alt": "Full refusals and refusals citing politics for Qwen2.5 and SmolLM2 across three pairs of question wordings about 30 names.",
+        "width": 2510,
+        "height": 1174
+      }
     },
     {
       "id": "tara_study",
       "label": "When a model calls an unnecessary tool",
       "type": "project",
-      "summary": "The same 20 requests elicited more unnecessary calls with native tool interfaces than with text lists in both Qwen models. A follow-up varied the tool descriptions.",
+      "summary": "A matching office address prompted false tool calls in constructed requests. The same effect did not recur on 12 eligible city questions from independent benchmarks.",
       "source_ids": [
-        "toolword",
-        "tara_matched_followup",
-        "tara"
+        "tara_external",
+        "tara",
+        "tara_matched_followup"
       ],
       "group": "AI interpretability and evaluation",
       "figure": {
-        "src": "assets/research/tara-held-out.png",
-        "source": "https://github.com/MateenahJAHAN/tara-chat-tool-study/blob/main/reporting/figures_heldout_final/01_behaviour_rates.png",
-        "caption": "Tool calls on held-out requests",
-        "alt": "Rates of tool calls and abstention for the text catalogue and native tool interfaces on the TARA study’s held-out cases.",
-        "width": 1801,
-        "height": 854
+        "src": "assets/research/tara-office-city.png",
+        "source": "https://github.com/MateenahJAHAN/tara-chat-tool-study/blob/main/followup_v3_tool_documentation/independent_descriptions/catalogue_office_pairs.png",
+        "caption": "Tool calls on independent city questions",
+        "alt": "Each paired point compares attempted tool calls on an external city question when the documentation office matches or differs from the requested city.",
+        "width": 2046,
+        "height": 1232
       }
     },
     {
@@ -475,6 +483,47 @@
       "source_ids": [
         "p59_manuscript",
         "p59_supplement"
+      ]
+    },
+    {
+      "id": "myeloma",
+      "type": "project",
+      "label": "GPU-accelerated myeloma genomics",
+      "summary": "An academic collaboration on GPU deployment, cancer variant annotation, and research reporting for the Multiple Myeloma division at Icahn Mount Sinai.",
+      "source_ids": [
+        "myeloma_account",
+        "myeloma_arch"
+      ],
+      "group": "Research software"
+    },
+    {
+      "id": "parabricks",
+      "type": "software",
+      "label": "Parabricks on H100 GPUs",
+      "summary": "GPU-accelerated processing in the sequencing workflow.",
+      "source_ids": [
+        "myeloma_account",
+        "parabricks_docs"
+      ]
+    },
+    {
+      "id": "civic",
+      "type": "method_source",
+      "label": "CIViC variant evidence",
+      "summary": "Published cancer variant evidence used for annotation.",
+      "source_ids": [
+        "myeloma_account",
+        "civic_docs"
+      ]
+    },
+    {
+      "id": "mmap_report",
+      "type": "output",
+      "label": "TSV/CSV to research report",
+      "summary": "Custom functions assembled the tabular workflow outputs into a final report for research review.",
+      "source_ids": [
+        "myeloma_account",
+        "myeloma_arch"
       ]
     }
   ],
@@ -873,6 +922,42 @@
       "source_ids": [
         "zee"
       ]
+    },
+    {
+      "id": "myeloma--parabricks",
+      "source": "myeloma",
+      "target": "parabricks",
+      "type": "software",
+      "label": "GPU processing",
+      "reverse_label": "Used in",
+      "source_ids": [
+        "myeloma_account",
+        "parabricks_docs"
+      ]
+    },
+    {
+      "id": "myeloma--civic",
+      "source": "myeloma",
+      "target": "civic",
+      "type": "method_source",
+      "label": "Variant annotation",
+      "reverse_label": "Supports",
+      "source_ids": [
+        "myeloma_account",
+        "civic_docs"
+      ]
+    },
+    {
+      "id": "myeloma--mmap_report",
+      "source": "myeloma",
+      "target": "mmap_report",
+      "type": "output",
+      "label": "Reporting",
+      "reverse_label": "Produced in",
+      "source_ids": [
+        "myeloma_account",
+        "myeloma_arch"
+      ]
     }
   ],
   "sources": [
@@ -1039,7 +1124,7 @@
     {
       "id": "cv",
       "label": "Patient-held-out evaluation",
-      "url": "https://github.com/MateenahJAHAN/Final_Deliverable_DeepTCRResearch_Mateenah_Jahan_CSIR/blob/773b8c4d4de3006344b10b796491418325870207/validation/repeated-patient-cv/REPORT.md"
+      "url": "https://github.com/MateenahJAHAN/Final_Deliverable_DeepTCRResearch_Mateenah_Jahan_CSIR/blob/main/validation/repeated-patient-cv/REPORT.md"
     },
     {
       "id": "drug_results",
@@ -1060,6 +1145,36 @@
       "id": "sherry_profile",
       "label": "Dr. Sherry Bhalla",
       "url": "https://igib.res.in/Scientists/sherry-bhalla"
+    },
+    {
+      "id": "myeloma_account",
+      "label": "Contribution summary",
+      "url": "https://github.com/MateenahJAHAN/myeloma-genomics-parabricks"
+    },
+    {
+      "id": "myeloma_arch",
+      "label": "Workflow architecture",
+      "url": "https://pan-theory-37309626.figma.site/"
+    },
+    {
+      "id": "civic_docs",
+      "label": "CIViC evidence model",
+      "url": "https://docs.civicdb.org/en/latest/"
+    },
+    {
+      "id": "parabricks_docs",
+      "label": "NVIDIA Parabricks documentation",
+      "url": "https://docs.nvidia.com/clara/parabricks/about-parabricks"
+    },
+    {
+      "id": "tara_external",
+      "label": "Independent benchmark pairs",
+      "url": "https://github.com/MateenahJAHAN/tara-chat-tool-study/blob/main/followup_v3_tool_documentation/independent_descriptions/catalogue_pairs.csv"
+    },
+    {
+      "id": "bluedot_paired",
+      "label": "Refusals by person and wording",
+      "url": "https://github.com/MateenahJAHAN/refusal-categories/blob/main/followup_v2_refusal_measurement/smol_names/person_pairs.csv"
     }
   ]
 }
