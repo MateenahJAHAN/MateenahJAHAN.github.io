@@ -1,0 +1,1065 @@
+{
+  "default_project": "p59",
+  "nodes": [
+    {
+      "id": "p59",
+      "label": "Sex-chromosome expression in cancer cell lines",
+      "type": "project",
+      "summary": "In 27 of 49 Tahoe-100M lines, measured expression differed from the pattern expected from the recorded donor sex. The LINCS drug-response comparison was inconclusive.",
+      "source_ids": [
+        "p59_manuscript",
+        "p59_supplement",
+        "p59_states"
+      ],
+      "group": "Computational biology",
+      "figure": {
+        "src": "assets/research/fellowship-study-design.png",
+        "source": "https://github.com/MateenahJAHAN/Project-59-CMAP-Sex-Differences/blob/main/manuscript/figures/fig1_design.pdf",
+        "caption": "Study design",
+        "alt": "Two workflows: compare vehicle-cell Y-gene and XIST expression with donor labels and other assays, and use bulk RNA sequencing to compare LINCS2020 drug responses within lineage.",
+        "width": 1950,
+        "height": 732
+      }
+    },
+    {
+      "id": "csir_tcr",
+      "label": "T-cell receptors and CAR-T response",
+      "type": "project",
+      "summary": "With whole patients held out, the median AUROC was 0.456 across ten five-fold evaluations of 34 patients. The sequence-level result did not carry over to new patients.",
+      "source_ids": [
+        "cv",
+        "csir"
+      ],
+      "group": "Computational biology",
+      "figure": {
+        "src": "assets/research/deeptcr-repeated-patient-auroc.png",
+        "source": "https://github.com/MateenahJAHAN/Final_Deliverable_DeepTCRResearch_Mateenah_Jahan_CSIR/blob/773b8c4d4de3006344b10b796491418325870207/validation/repeated-patient-cv/REPORT.md",
+        "alt": "Patient-held-out AUROC across five splits for DeepTCR and a composition baseline.",
+        "caption": "Patient-held-out model evaluation",
+        "width": 2340,
+        "height": 855
+      }
+    },
+    {
+      "id": "deeptcr",
+      "label": "DeepTCR software update",
+      "type": "project",
+      "summary": "Updated the framework for Python 3.10 and TensorFlow 2.12 and maintained its tutorial notebooks.",
+      "source_ids": [
+        "deepcredit",
+        "deepcode"
+      ],
+      "group": "Computational biology"
+    },
+    {
+      "id": "biomni_ad",
+      "label": "Alzheimer’s drug repurposing",
+      "type": "project",
+      "summary": "The agent ranked ten hypotheses after querying drug targets. Its literature search failed. The candidates have not been tested experimentally.",
+      "source_ids": [
+        "drug_results",
+        "biomni"
+      ],
+      "group": "Computational biology",
+      "figure": {
+        "src": "assets/research/biomni-candidate-scores.png",
+        "source": "https://github.com/MateenahJAHAN/biomni-ad-drug-repurposing/blob/5e4a5d953d76e587fe8f6ec73394c02c267e4910/results/drug_repurposing_scores.png",
+        "caption": "Scores for the ten candidate drugs",
+        "alt": "Chart ranking computational drug repurposing hypotheses for Alzheimer’s disease.",
+        "width": 2970,
+        "height": 1764
+      }
+    },
+    {
+      "id": "medgemma_probes",
+      "label": "MedGemma in hematologic oncology",
+      "type": "project",
+      "summary": "Thirteen prompts produced 24 outputs. The dataset pairs the replies with reference answers and annotations.",
+      "source_ids": [
+        "medgemma"
+      ],
+      "group": "AI interpretability and evaluation"
+    },
+    {
+      "id": "refusal_study",
+      "label": "Do models refuse harmless questions?",
+      "type": "project",
+      "summary": "The BlueDot study examined refusal directions and tested what two models actually said in response to benign questions.",
+      "source_ids": [
+        "benign",
+        "refusal"
+      ],
+      "group": "AI interpretability and evaluation"
+    },
+    {
+      "id": "tara_study",
+      "label": "When a model calls an unnecessary tool",
+      "type": "project",
+      "summary": "The same 20 requests elicited more unnecessary calls with native tool interfaces than with text lists in both Qwen models. A follow-up varied the tool descriptions.",
+      "source_ids": [
+        "toolword",
+        "tara_matched_followup",
+        "tara"
+      ],
+      "group": "AI interpretability and evaluation",
+      "figure": {
+        "src": "assets/research/tara-held-out.png",
+        "source": "https://github.com/MateenahJAHAN/tara-chat-tool-study/blob/main/reporting/figures_heldout_final/01_behaviour_rates.png",
+        "caption": "Tool calls on held-out requests",
+        "alt": "Rates of tool calls and abstention for the text catalogue and native tool interfaces on the TARA study’s held-out cases.",
+        "width": 1801,
+        "height": 854
+      }
+    },
+    {
+      "id": "boldconnect",
+      "label": "BoldConnect · Ligand-scoring tool interface",
+      "type": "project",
+      "summary": "MCP interface for ligand–receptor scoring, library screening and mutation comparison. It uses a placeholder scoring model by default.",
+      "source_ids": [
+        "bold"
+      ],
+      "stage": "Software prototype",
+      "group": "Applied machine learning and software"
+    },
+    {
+      "id": "diffguard",
+      "label": "DiffGuard / NeuroDiff · Model comparison",
+      "type": "project",
+      "summary": "Prototype for comparing the weights and activations of two model versions.",
+      "source_ids": [
+        "diff"
+      ],
+      "stage": "Software prototype",
+      "group": "Applied machine learning and software"
+    },
+    {
+      "id": "forecast",
+      "label": "Wikipedia page-view forecasting",
+      "type": "project",
+      "summary": "60-day Wikipedia page-view forecasting with ARIMA, SARIMAX and Prophet, including seasonality and a campaign indicator.",
+      "source_ids": [
+        "adease"
+      ],
+      "stage": "Course project",
+      "group": "Applied machine learning and software"
+    },
+    {
+      "id": "loan_default",
+      "label": "Loan-default modelling",
+      "type": "project",
+      "summary": "Logistic regression for loan default with threshold analysis and ROC and precision–recall curves on synthetic data.",
+      "source_ids": [
+        "loan"
+      ],
+      "stage": "Course project using synthetic data",
+      "group": "Applied machine learning and software"
+    },
+    {
+      "id": "movie_recommender",
+      "label": "Movie recommendation",
+      "type": "project",
+      "summary": "Collaborative-filtering code using movie ratings: Pearson and cosine similarities, nearest neighbours and SVD latent factors, with recommendation notebooks and evaluation outputs.",
+      "source_ids": [
+        "zee"
+      ],
+      "stage": "Course project",
+      "group": "Applied machine learning and software"
+    },
+    {
+      "id": "marouen",
+      "label": "Dr Marouen Ben Guebila",
+      "type": "person",
+      "summary": "Mentor for the Fatima Fellowship project. Dana-Farber Cancer Institute and Harvard Medical School.",
+      "source_ids": [
+        "marouen",
+        "marouen_site"
+      ]
+    },
+    {
+      "id": "fatima",
+      "label": "Fatima Fellowship",
+      "type": "programme",
+      "summary": "2026 Fatima Fellowship. Marouen Ben Guebila mentored the project.",
+      "source_ids": [
+        "p59"
+      ]
+    },
+    {
+      "id": "sherry",
+      "label": "Dr Sherry Bhalla",
+      "type": "person",
+      "summary": "Supervisor of the CSIR–IGIB research traineeship on T-cell repertoires and CD19 CAR-T response.",
+      "source_ids": [
+        "sherry_profile"
+      ]
+    },
+    {
+      "id": "cmap_data",
+      "label": "CMap / LINCS2020",
+      "type": "dataset",
+      "summary": "The early screen used 36,523 compound-treatment signatures. Part B tested response to 114 compounds across 41 cell lines.",
+      "source_ids": [
+        "cmap",
+        "p59"
+      ]
+    },
+    {
+      "id": "gtex_data",
+      "label": "GTEx v8 reference gene sets",
+      "type": "dataset",
+      "summary": "Gene–tissue associations spanning 44 tissues, used as reference gene sets in the CMap screen.",
+      "source_ids": [
+        "gtex",
+        "p59phase2"
+      ]
+    },
+    {
+      "id": "logreg",
+      "label": "Logistic regression",
+      "type": "method",
+      "summary": "Logistic regression was used to model loan default under class imbalance.",
+      "source_ids": [
+        "loan",
+        "portfolio"
+      ]
+    },
+    {
+      "id": "tcr_cohort",
+      "label": "34-patient TCR cohort",
+      "type": "dataset",
+      "summary": "239,637 TCRβ sequence records from 18 CAR-T responders and 16 nonresponders.",
+      "source_ids": [
+        "csir"
+      ]
+    },
+    {
+      "id": "deep_framework",
+      "label": "DeepTCR framework",
+      "type": "software",
+      "summary": "Upstream T-cell repertoire representation and analysis framework by the original DeepTCR authors.",
+      "source_ids": [
+        "deepup",
+        "deeppaper"
+      ]
+    },
+    {
+      "id": "tcr_output",
+      "label": "Patient-held-out validation",
+      "type": "output",
+      "summary": "Across ten five-fold evaluations, the median AUROC was 0.456 for DeepTCR and 0.386 for the composition baseline.",
+      "source_ids": [
+        "cv"
+      ]
+    },
+    {
+      "id": "deep_paper",
+      "label": "DeepTCR · Nature Communications 2021",
+      "type": "publication",
+      "summary": "Sidhom, Larman, Pardoll and Baras described DeepTCR in Nature Communications in 2021 (DOI 10.1038/s41467-021-21879-w).",
+      "source_ids": [
+        "deeppaper"
+      ]
+    },
+    {
+      "id": "deep_release",
+      "label": "DeepTCR release notes",
+      "type": "output",
+      "summary": "The release notes credit Mateenah for help with the Python 3.10 and TensorFlow 2.12 update.",
+      "source_ids": [
+        "deepcredit"
+      ]
+    },
+    {
+      "id": "python_tf",
+      "label": "Python 3.10 / TensorFlow 2.12",
+      "type": "software",
+      "summary": "Runtime versions targeted by the DeepTCR update.",
+      "source_ids": [
+        "deepcredit",
+        "deepenv"
+      ]
+    },
+    {
+      "id": "biomni_framework",
+      "label": "Biomni framework",
+      "type": "software",
+      "summary": "Biomedical-agent framework used in the drug-repurposing workflow.",
+      "source_ids": [
+        "biomni",
+        "biomniup"
+      ]
+    },
+    {
+      "id": "ad_candidates",
+      "label": "Ten ranked drug hypotheses",
+      "type": "output",
+      "summary": "Ten model-ranked drug repurposing hypotheses. The workflow did not establish clinical or experimental efficacy.",
+      "source_ids": [
+        "drug_results"
+      ]
+    },
+    {
+      "id": "medgemma_data",
+      "label": "13 MedGemma test prompts",
+      "type": "dataset",
+      "summary": "Public prompts, reference answers, model outputs and qualitative notes.",
+      "source_ids": [
+        "medgemma"
+      ]
+    },
+    {
+      "id": "medgemma_model",
+      "label": "MedGemma 4B responses",
+      "type": "software",
+      "summary": "Outputs from the pretrained and instruction-tuned variants. Both control prompts ran on the instruction-tuned variant only.",
+      "source_ids": [
+        "medgemma"
+      ]
+    },
+    {
+      "id": "qwen",
+      "label": "Qwen2.5-1.5B-Instruct",
+      "type": "software",
+      "summary": "Open-weight language model used in the refusal and tool-calling studies.",
+      "source_ids": [
+        "qwen",
+        "refusal",
+        "tara"
+      ]
+    },
+    {
+      "id": "activation_dirs",
+      "label": "Activation-direction interventions",
+      "type": "method",
+      "summary": "Estimating and intervening on residual-stream directions, with checks on harmful and harmless prompts.",
+      "source_ids": [
+        "refusal",
+        "refusalv2"
+      ]
+    },
+    {
+      "id": "refusal_results",
+      "label": "Refusal results",
+      "type": "output",
+      "summary": "All four tested directions exceeded the 0.1 KL-divergence threshold on harmless prompts, added after candidate selection. The mechanism remains unresolved.",
+      "source_ids": [
+        "refusalv2"
+      ]
+    },
+    {
+      "id": "bfcl_data",
+      "label": "BFCL function-calling tasks",
+      "type": "dataset",
+      "summary": "Public function-calling tasks with relevant and irrelevant requests. Development and held-out sets use separate task groups.",
+      "source_ids": [
+        "bfcl",
+        "tara"
+      ]
+    },
+    {
+      "id": "interfaces",
+      "label": "Text / native-tool encodings",
+      "type": "method",
+      "summary": "The same tools given to the model as plain text or in its native tool format.",
+      "source_ids": [
+        "tara"
+      ]
+    },
+    {
+      "id": "mcp_interface",
+      "label": "MCP tool interface",
+      "type": "method",
+      "summary": "Tool-facing service interface for the BoldConnect integration.",
+      "source_ids": [
+        "bold"
+      ]
+    },
+    {
+      "id": "bold_adapter",
+      "label": "BOLD-GPCRs adapter contract",
+      "type": "software",
+      "summary": "Adapter for the scoring model, with a deterministic placeholder for interface tests.",
+      "source_ids": [
+        "bold"
+      ]
+    },
+    {
+      "id": "weight_activation",
+      "label": "Weights and activation comparisons",
+      "type": "method",
+      "summary": "Weight-level and activation-level comparison.",
+      "source_ids": [
+        "diff"
+      ]
+    },
+    {
+      "id": "diff_code",
+      "label": "Differential model-analysis code",
+      "type": "software",
+      "summary": "Configuration/loading and comparison modules in the public repository.",
+      "source_ids": [
+        "diff"
+      ]
+    },
+    {
+      "id": "wikipedia_data",
+      "label": "Wikipedia page-view series",
+      "type": "dataset",
+      "summary": "Daily article-view histories and campaign metadata described in the forecasting repository.",
+      "source_ids": [
+        "adease"
+      ]
+    },
+    {
+      "id": "forecast_methods",
+      "label": "ARIMA / SARIMAX / Prophet",
+      "type": "method",
+      "summary": "Time-series baselines and seasonal/exogenous forecasting implementations.",
+      "source_ids": [
+        "adease"
+      ]
+    },
+    {
+      "id": "loan_data",
+      "label": "Generated loan-task dataset",
+      "type": "dataset",
+      "summary": "Synthetic loan data generated by the repository’s code.",
+      "source_ids": [
+        "loan"
+      ]
+    },
+    {
+      "id": "rating_data",
+      "label": "Movie-rating data",
+      "type": "dataset",
+      "summary": "The Zee project repository includes rating, user and movie tables.",
+      "source_ids": [
+        "zee"
+      ]
+    },
+    {
+      "id": "collaborative",
+      "label": "Collaborative filtering / SVD",
+      "type": "method",
+      "summary": "Pearson/cosine similarity, nearest neighbours and latent-factor rating models.",
+      "source_ids": [
+        "zee"
+      ]
+    },
+    {
+      "id": "tara_results",
+      "label": "TARA tool-calling results",
+      "type": "output",
+      "summary": "On 32 held-out irrelevant requests, Qwen2.5 made 9 unnecessary calls with the text catalogue and 16 with native tools. Steering left unnecessary calls at 2/8 and reduced correct outcomes on relevant requests from 7/8 to 6/8.",
+      "source_ids": [
+        "tararesults",
+        "taraaudit"
+      ]
+    },
+    {
+      "id": "tahoe",
+      "label": "Tahoe-100M",
+      "type": "dataset",
+      "summary": "Vehicle-treated single cells supplied the Y-gene and XIST expression measurements.",
+      "source_ids": [
+        "p59_states",
+        "p59_manuscript"
+      ]
+    },
+    {
+      "id": "bulk_rna",
+      "label": "Bulk RNA sequencing",
+      "type": "dataset",
+      "summary": "RNA sequencing from independent cultures agreed with the Tahoe-100M expression pattern for 47 of 49 lines.",
+      "source_ids": [
+        "p59_manuscript",
+        "p59_supplement"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "p59--mentoredBy--marouen",
+      "source": "p59",
+      "target": "marouen",
+      "type": "mentoredBy",
+      "label": "Mentored by",
+      "reverse_label": "Mentors",
+      "source_ids": [
+        "p59",
+        "marouen"
+      ]
+    },
+    {
+      "id": "p59--programme--fatima",
+      "source": "p59",
+      "target": "fatima",
+      "type": "programme",
+      "label": "Fellowship",
+      "reverse_label": "Research project",
+      "source_ids": [
+        "p59"
+      ]
+    },
+    {
+      "id": "p59--usesData--cmap_data",
+      "source": "p59",
+      "target": "cmap_data",
+      "type": "usesData",
+      "label": "Uses data",
+      "reverse_label": "Used by",
+      "source_ids": [
+        "p59"
+      ]
+    },
+    {
+      "id": "p59--usesData--gtex_data",
+      "source": "p59",
+      "target": "gtex_data",
+      "type": "usesData",
+      "label": "CMap screen data",
+      "reverse_label": "Used in the screen",
+      "source_ids": [
+        "p59phase2"
+      ]
+    },
+    {
+      "id": "p59-tahoe",
+      "source": "p59",
+      "target": "tahoe",
+      "type": "dataset",
+      "label": "Dataset",
+      "reverse_label": "Project",
+      "source_ids": [
+        "p59_states",
+        "p59_manuscript"
+      ]
+    },
+    {
+      "id": "p59-bulk_rna",
+      "source": "p59",
+      "target": "bulk_rna",
+      "type": "dataset",
+      "label": "Dataset",
+      "reverse_label": "Project",
+      "source_ids": [
+        "p59_manuscript",
+        "p59_supplement"
+      ]
+    },
+    {
+      "id": "csir_tcr--mentoredBy--sherry",
+      "source": "csir_tcr",
+      "target": "sherry",
+      "type": "mentoredBy",
+      "label": "Supervised by",
+      "reverse_label": "Supervises",
+      "source_ids": [
+        "sherry_profile"
+      ]
+    },
+    {
+      "id": "csir_tcr--usesData--tcr_cohort",
+      "source": "csir_tcr",
+      "target": "tcr_cohort",
+      "type": "usesData",
+      "label": "Uses data",
+      "reverse_label": "Used by",
+      "source_ids": [
+        "csir"
+      ]
+    },
+    {
+      "id": "csir_tcr--usesFramework--deep_framework",
+      "source": "csir_tcr",
+      "target": "deep_framework",
+      "type": "usesFramework",
+      "label": "Uses framework",
+      "reverse_label": "Used by",
+      "source_ids": [
+        "csir"
+      ]
+    },
+    {
+      "id": "csir_tcr--output--tcr_output",
+      "source": "csir_tcr",
+      "target": "tcr_output",
+      "type": "output",
+      "label": "Output",
+      "reverse_label": "Output of",
+      "source_ids": [
+        "cv"
+      ]
+    },
+    {
+      "id": "deeptcr--contributesTo--deep_framework",
+      "source": "deeptcr",
+      "target": "deep_framework",
+      "type": "contributesTo",
+      "label": "Contributes to",
+      "reverse_label": "Contribution",
+      "source_ids": [
+        "deepcredit"
+      ]
+    },
+    {
+      "id": "deeptcr--frameworkPublication--deep_paper",
+      "source": "deeptcr",
+      "target": "deep_paper",
+      "type": "frameworkPublication",
+      "label": "Framework paper",
+      "reverse_label": "Framework for",
+      "source_ids": [
+        "deeppaper"
+      ]
+    },
+    {
+      "id": "deeptcr--acknowledgedIn--deep_release",
+      "source": "deeptcr",
+      "target": "deep_release",
+      "type": "acknowledgedIn",
+      "label": "Acknowledged in",
+      "reverse_label": "Credits",
+      "source_ids": [
+        "deepcredit"
+      ]
+    },
+    {
+      "id": "deeptcr--runtimeTarget--python_tf",
+      "source": "deeptcr",
+      "target": "python_tf",
+      "type": "runtimeTarget",
+      "label": "Updated to",
+      "reverse_label": "Runtime for",
+      "source_ids": [
+        "deepenv",
+        "deepcredit"
+      ]
+    },
+    {
+      "id": "biomni_ad--usesFramework--biomni_framework",
+      "source": "biomni_ad",
+      "target": "biomni_framework",
+      "type": "usesFramework",
+      "label": "Uses framework",
+      "reverse_label": "Used by",
+      "source_ids": [
+        "biomni"
+      ]
+    },
+    {
+      "id": "biomni_ad--output--ad_candidates",
+      "source": "biomni_ad",
+      "target": "ad_candidates",
+      "type": "output",
+      "label": "Output",
+      "reverse_label": "Output of",
+      "source_ids": [
+        "drug_results"
+      ]
+    },
+    {
+      "id": "medgemma_probes--datasetOutput--medgemma_data",
+      "source": "medgemma_probes",
+      "target": "medgemma_data",
+      "type": "datasetOutput",
+      "label": "Dataset",
+      "reverse_label": "Dataset of",
+      "source_ids": [
+        "medgemma"
+      ]
+    },
+    {
+      "id": "medgemma_probes--evaluates--medgemma_model",
+      "source": "medgemma_probes",
+      "target": "medgemma_model",
+      "type": "evaluates",
+      "label": "Evaluates",
+      "reverse_label": "Evaluated in",
+      "source_ids": [
+        "medgemma"
+      ]
+    },
+    {
+      "id": "tara_study--evaluates--qwen",
+      "source": "tara_study",
+      "target": "qwen",
+      "type": "evaluates",
+      "label": "Model",
+      "reverse_label": "Evaluated in",
+      "source_ids": [
+        "tara",
+        "qwen"
+      ]
+    },
+    {
+      "id": "tara_study--usesData--bfcl_data",
+      "source": "tara_study",
+      "target": "bfcl_data",
+      "type": "usesData",
+      "label": "Uses data",
+      "reverse_label": "Used by",
+      "source_ids": [
+        "tara",
+        "bfcl"
+      ]
+    },
+    {
+      "id": "tara_study--compares--interfaces",
+      "source": "tara_study",
+      "target": "interfaces",
+      "type": "compares",
+      "label": "Compares",
+      "reverse_label": "Compared in",
+      "source_ids": [
+        "tara"
+      ]
+    },
+    {
+      "id": "tara_study--produces--tara_results",
+      "source": "tara_study",
+      "target": "tara_results",
+      "type": "produces",
+      "label": "Results",
+      "reverse_label": "Produced by",
+      "source_ids": [
+        "tararesults",
+        "taraaudit"
+      ]
+    },
+    {
+      "id": "refusal_study--evaluates--qwen",
+      "source": "refusal_study",
+      "target": "qwen",
+      "type": "evaluates",
+      "label": "Model",
+      "reverse_label": "Evaluated in",
+      "source_ids": [
+        "refusal",
+        "refusalv2"
+      ]
+    },
+    {
+      "id": "refusal_study--usesMethod--activation_dirs",
+      "source": "refusal_study",
+      "target": "activation_dirs",
+      "type": "usesMethod",
+      "label": "Intervention",
+      "reverse_label": "Used by",
+      "source_ids": [
+        "refusal",
+        "refusalv2"
+      ]
+    },
+    {
+      "id": "refusal_study--output--refusal_results",
+      "source": "refusal_study",
+      "target": "refusal_results",
+      "type": "output",
+      "label": "Results",
+      "reverse_label": "Produced by",
+      "source_ids": [
+        "refusal",
+        "refusalv2"
+      ]
+    },
+    {
+      "id": "boldconnect--implements--mcp_interface",
+      "source": "boldconnect",
+      "target": "mcp_interface",
+      "type": "implements",
+      "label": "Implements",
+      "reverse_label": "Implemented in",
+      "source_ids": [
+        "bold"
+      ]
+    },
+    {
+      "id": "boldconnect--code--bold_adapter",
+      "source": "boldconnect",
+      "target": "bold_adapter",
+      "type": "code",
+      "label": "Adapter code",
+      "reverse_label": "Code for",
+      "source_ids": [
+        "bold"
+      ]
+    },
+    {
+      "id": "diffguard--implements--weight_activation",
+      "source": "diffguard",
+      "target": "weight_activation",
+      "type": "implements",
+      "label": "Implements",
+      "reverse_label": "Implemented in",
+      "source_ids": [
+        "diff"
+      ]
+    },
+    {
+      "id": "diffguard--code--diff_code",
+      "source": "diffguard",
+      "target": "diff_code",
+      "type": "code",
+      "label": "Code",
+      "reverse_label": "Code for",
+      "source_ids": [
+        "diff"
+      ]
+    },
+    {
+      "id": "forecast--usesData--wikipedia_data",
+      "source": "forecast",
+      "target": "wikipedia_data",
+      "type": "usesData",
+      "label": "Uses data",
+      "reverse_label": "Used by",
+      "source_ids": [
+        "adease"
+      ]
+    },
+    {
+      "id": "forecast--usesMethod--forecast_methods",
+      "source": "forecast",
+      "target": "forecast_methods",
+      "type": "usesMethod",
+      "label": "Uses methods",
+      "reverse_label": "Used by",
+      "source_ids": [
+        "adease"
+      ]
+    },
+    {
+      "id": "loan_default--usesData--loan_data",
+      "source": "loan_default",
+      "target": "loan_data",
+      "type": "usesData",
+      "label": "Uses data",
+      "reverse_label": "Used by",
+      "source_ids": [
+        "loan"
+      ]
+    },
+    {
+      "id": "loan_default--usesMethod--logreg",
+      "source": "loan_default",
+      "target": "logreg",
+      "type": "usesMethod",
+      "label": "Uses method",
+      "reverse_label": "Used by",
+      "source_ids": [
+        "loan"
+      ]
+    },
+    {
+      "id": "movie_recommender--usesData--rating_data",
+      "source": "movie_recommender",
+      "target": "rating_data",
+      "type": "usesData",
+      "label": "Uses data",
+      "reverse_label": "Used by",
+      "source_ids": [
+        "zee"
+      ]
+    },
+    {
+      "id": "movie_recommender--usesMethod--collaborative",
+      "source": "movie_recommender",
+      "target": "collaborative",
+      "type": "usesMethod",
+      "label": "Uses method",
+      "reverse_label": "Used by",
+      "source_ids": [
+        "zee"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "p59",
+      "label": "CMap and GTEx screen",
+      "url": "https://github.com/MateenahJAHAN/Project-59-CMAP-Sex-Differences#how-the-analysis-developed"
+    },
+    {
+      "id": "p59phase2",
+      "label": "GTEx reference notebook",
+      "url": "https://github.com/MateenahJAHAN/Project-59-CMAP-Sex-Differences/blob/main/Phase2_Fishers_50Drugs/Project59_GTEx_DrugClassification.ipynb"
+    },
+    {
+      "id": "marouen",
+      "label": "Dana-Farber · Viswanathan Lab team",
+      "url": "https://labs.dana-farber.org/viswanathanlab/our-team"
+    },
+    {
+      "id": "marouen_site",
+      "label": "Marouen Ben Guebila",
+      "url": "https://marouenbg.github.io/"
+    },
+    {
+      "id": "cmap",
+      "label": "Connectivity Map / CLUE",
+      "url": "https://clue.io/"
+    },
+    {
+      "id": "gtex",
+      "label": "GTEx Portal",
+      "url": "https://gtexportal.org/home/"
+    },
+    {
+      "id": "portfolio",
+      "label": "Portfolio projects",
+      "url": "https://mateenahjahan.github.io/#projects"
+    },
+    {
+      "id": "csir",
+      "label": "CAR-T response code and report",
+      "url": "https://github.com/MateenahJAHAN/Final_Deliverable_DeepTCRResearch_Mateenah_Jahan_CSIR"
+    },
+    {
+      "id": "deepcode",
+      "label": "DeepTCR compatibility code and notebooks",
+      "url": "https://github.com/MateenahJAHAN/Deep-TCR---All-tutorial-working"
+    },
+    {
+      "id": "deepenv",
+      "label": "Environment file",
+      "url": "https://github.com/MateenahJAHAN/Deep-TCR---All-tutorial-working/blob/main/requirements-exact.txt"
+    },
+    {
+      "id": "deeppaper",
+      "label": "DeepTCR · Nature Communications (2021) · open full text",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7952906/"
+    },
+    {
+      "id": "deepcredit",
+      "label": "DeepTCR release notes",
+      "url": "https://github.com/sidhomj/DeepTCR/commit/715f6642292a296aa22ffba1b219908fd5af5c5f"
+    },
+    {
+      "id": "deepup",
+      "label": "DeepTCR repository",
+      "url": "https://github.com/sidhomj/DeepTCR"
+    },
+    {
+      "id": "biomni",
+      "label": "Biomni-AD drug-repurposing repository",
+      "url": "https://github.com/MateenahJAHAN/biomni-ad-drug-repurposing"
+    },
+    {
+      "id": "biomniup",
+      "label": "Biomni framework",
+      "url": "https://github.com/snap-stanford/Biomni"
+    },
+    {
+      "id": "medgemma",
+      "label": "MedGemma dataset",
+      "url": "https://huggingface.co/datasets/Mateenah/medgemma-4b-hematologic-oncology-blind-spots"
+    },
+    {
+      "id": "refusal",
+      "label": "Refusal-categories code",
+      "url": "https://github.com/MateenahJAHAN/refusal-categories"
+    },
+    {
+      "id": "refusalv2",
+      "label": "Refusal results",
+      "url": "https://huggingface.co/datasets/Mateenah/refusal-categories-results/blob/main/results_v0.2.json"
+    },
+    {
+      "id": "qwen",
+      "label": "Qwen2.5-1.5B-Instruct model",
+      "url": "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct"
+    },
+    {
+      "id": "tara",
+      "label": "Code",
+      "url": "https://github.com/MateenahJAHAN/tara-chat-tool-study"
+    },
+    {
+      "id": "bfcl",
+      "label": "Berkeley Function Calling Leaderboard",
+      "url": "https://github.com/ShishirPatil/gorilla/tree/main/berkeley-function-call-leaderboard"
+    },
+    {
+      "id": "bold",
+      "label": "BoldConnect repository",
+      "url": "https://github.com/MateenahJAHAN/BoldConnect"
+    },
+    {
+      "id": "diff",
+      "label": "Differential Model Alignment repository",
+      "url": "https://github.com/MateenahJAHAN/Differential-Model-Alignment"
+    },
+    {
+      "id": "adease",
+      "label": "Wikipedia page-view forecasting",
+      "url": "https://github.com/MateenahJAHAN/adease-wikipedia-timeseries-forecasting"
+    },
+    {
+      "id": "loan",
+      "label": "Loan-default modelling code",
+      "url": "https://github.com/MateenahJAHAN/Predictive-Analytics-in-Asymmetric-Data-A-Robust-Classification-Framework"
+    },
+    {
+      "id": "zee",
+      "label": "Movie recommendation code",
+      "url": "https://github.com/MateenahJAHAN/Zee-Recommender-Systems"
+    },
+    {
+      "id": "tararesults",
+      "label": "Results (first experiment)",
+      "url": "https://github.com/MateenahJAHAN/tara-chat-tool-study/blob/main/study_v1/RESULTS.txt"
+    },
+    {
+      "id": "taraaudit",
+      "label": "Checks on saved outputs",
+      "url": "https://github.com/MateenahJAHAN/tara-chat-tool-study/blob/main/study_v1/reviews/HELDOUT_INDEPENDENT_AUDIT_PUBLIC.txt"
+    },
+    {
+      "id": "tara_matched_followup",
+      "label": "Results",
+      "url": "https://github.com/MateenahJAHAN/tara-chat-tool-study/blob/main/followup_v2_tool_applicability/RESULTS.md"
+    },
+    {
+      "id": "p59_manuscript",
+      "label": "Manuscript (PDF)",
+      "url": "https://mateenahjahan.github.io/assets/papers/fellowship-manuscript.pdf"
+    },
+    {
+      "id": "p59_supplement",
+      "label": "Supplement (PDF)",
+      "url": "https://mateenahjahan.github.io/assets/papers/fellowship-supplement.pdf"
+    },
+    {
+      "id": "p59_states",
+      "label": "Expression-state table",
+      "url": "https://github.com/MateenahJAHAN/Project-59-CMAP-Sex-Differences/blob/main/analysis/data/tahoe-emeraldbay-expression-states.tsv"
+    },
+    {
+      "id": "cv",
+      "label": "Patient-held-out evaluation",
+      "url": "https://github.com/MateenahJAHAN/Final_Deliverable_DeepTCRResearch_Mateenah_Jahan_CSIR/blob/773b8c4d4de3006344b10b796491418325870207/validation/repeated-patient-cv/REPORT.md"
+    },
+    {
+      "id": "drug_results",
+      "label": "Ranked hypotheses",
+      "url": "https://github.com/MateenahJAHAN/biomni-ad-drug-repurposing/blob/e78b8c81dc96c89f538e3b4bb9e3686187300089/results/ad_repurposing_results.md"
+    },
+    {
+      "id": "toolword",
+      "label": "Tool descriptions study",
+      "url": "https://github.com/MateenahJAHAN/tara-chat-tool-study/tree/main/followup_v3_tool_documentation"
+    },
+    {
+      "id": "benign",
+      "label": "Benign-question study",
+      "url": "https://github.com/MateenahJAHAN/refusal-categories/tree/main/followup_v2_refusal_measurement"
+    },
+    {
+      "id": "sherry_profile",
+      "label": "Dr. Sherry Bhalla",
+      "url": "https://igib.res.in/Scientists/sherry-bhalla"
+    }
+  ]
+}

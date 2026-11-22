@@ -22,17 +22,22 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="styles.css?v=20261121" rel="stylesheet"/>
-<link href="curation.css?v=20261121" rel="stylesheet"/>
-<meta content="https://mateenahjahan.github.io/assets/illustrations/mateenah-academic-headshot.jpg" property="og:image"/><meta content="AI-assisted headshot of Mateenah Jahan" property="og:image:alt"/></head>
+<link href="curation.css?v=20261122" rel="stylesheet"/>
+<meta content="https://mateenahjahan.github.io/assets/illustrations/mateenah-academic-headshot.jpg" property="og:image"/><meta content="AI-assisted headshot of Mateenah Jahan" property="og:image:alt"/><link rel="stylesheet" href="research-map.css?v=map1"/>
+<script defer src="research-map.js?v=20261122"></script>
+</head>
 <body>
 <a class="skip-link" href="#main-content">Skip to main content</a>
 <span id="top"></span><header class="portfolio-masthead"><div class="masthead-inner">
 <div class="container">
 <nav aria-label="Portfolio" class="nav">
 <a aria-label="Mateenah Jahan, home" class="logo" href="#top">maj</a>
-<div class="nav-links">
+<button class="menu-toggle" type="button" aria-controls="portfolio-sections" aria-expanded="false" hidden>Menu</button>
+<div class="nav-links" id="portfolio-sections">
 <a class="nav-wide" href="#about">About</a>
 <a href="#projects">Research</a>
+<a href="#research-map">Map</a>
+<a href="#applied-ml">Applied ML</a>
 <a href="#experience">Experience</a>
 <a href="#education">Education</a>
 <a class="nav-wide" href="#skills">Skills</a>
@@ -47,24 +52,74 @@
 <div class="container">
 <div class="about-grid">
 <div class="about-text"><h1>Mateenah Jahan</h1><p class="intro-role">Computational genomics, machine learning &amp; AI interpretability</p>
-<p><strong>I’m a Fatima Fellow in the 2026 cycle of the <a href="https://fatima.institute/about">Fatima Fellowship</a>.</strong> My mentor is <a href="https://labs.dana-farber.org/viswanathanlab/our-team">Dr. Marouen Ben Guebila</a> of the Viswanathan Lab at Dana-Farber Cancer Institute. I’m applying to PhD programs in computational biology for Fall 2027.</p>
+<p>As a <a href="https://fatima.institute/about">Fatima Fellow</a>, I study how the choice of cancer cell lines shapes what we can infer about drug response. I work with <a href="https://labs.dana-farber.org/viswanathanlab/our-team">Dr. Marouen Ben Guebila</a> of the Viswanathan Lab at Dana-Farber Cancer Institute. Our <a href="assets/papers/fellowship-manuscript.pdf">fellowship manuscript</a> examines how closely donor-sex labels match what the cells express.</p>
+<p class="application-line">I’m applying to computational biology PhD programs for Fall 2027.</p>
 <div aria-label="Profile links" class="profile-actions">
 <a class="btn primary" href="#projects">Research projects</a>
 <a class="btn ghost" href="https://github.com/MateenahJAHAN">GitHub</a>
-<a class="btn ghost" href="#contact">Contact</a>
-<a class="btn ghost" href="assets/Mateenah_Jahan_PhD_Resume_One_Page.pdf?v=c7e596c4">Résumé</a>
+<a class="btn ghost" href="assets/Mateenah_Jahan_PhD_Resume_One_Page.pdf?v=c7e596c4">One-page résumé</a>
+<a class="btn ghost" href="assets/Mateenah_Jahan_PhD_Resume_Two_Page.pdf?v=20261122">Two-page résumé</a>
+<a class="btn ghost" href="https://www.linkedin.com/in/maj-">LinkedIn</a>
 </div>
-<p>For the fellowship I screened 50 compounds in CMap against sex-biased genes from 44 GTEx tissues. Seventeen compounds were enriched in at least one tissue. When I counted the cell lines behind the strongest category, about 91% of its profiles came from female-donor lines, although it held 17 female-donor and 18 male-donor lines. The female-donor lines had been profiled about 11 times as often, so the screen could not separate sex from sampling. That led to a <a href="#project-59">draft manuscript</a> with Dr. Ben Guebila on whether the donor-sex labels of cancer cell lines match what the cells express.</p>
-<p>Before that I was a research trainee at CSIR-IGIB with <a href="https://igib.res.in/Scientists/sherry-bhalla">Dr. Sherry Bhalla</a>. I trained <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7952906/">DeepTCR</a> models on 239,637 TCRβ sequences from 34 patients to study response to CD19 CAR-T therapy. When whole patients were held out, the model did not reliably predict response. The <a href="#project-deeptcr">project notes</a> explain why. I also helped update DeepTCR for Python 3.10 and TensorFlow 2.12, as noted in its <a href="https://github.com/sidhomj/DeepTCR/commit/715f6642292a296aa22ffba1b219908fd5af5c5f">release notes</a>.</p>
+<details class="research-bio">
+<summary>More about my research and training</summary>
+<p>For the fellowship I screened 50 compounds in CMap against sex-biased genes from 44 GTEx tissues. Seventeen compounds were enriched in at least one tissue. When I counted the cell lines behind the strongest category, about 91% of its profiles came from female-donor lines, although it held 17 female-donor and 18 male-donor lines. The female-donor lines had been profiled about 11 times as often, so the screen could not separate sex from sampling. That sampling difference led me to ask what a donor label can tell us about the cells in culture.</p>
+<p>Before that I was a research trainee at the Council of Scientific and Industrial Research’s Institute of Genomics and Integrative Biology (CSIR-IGIB) with <a href="https://igib.res.in/Scientists/sherry-bhalla">Dr. Sherry Bhalla</a>. I trained <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7952906/">DeepTCR</a> models on 239,637 TCRβ sequences from 34 patients to study response to CD19 CAR-T therapy. When whole patients were held out, the model did not reliably predict response. The <a href="#project-deeptcr">project notes</a> explain why. I also helped update DeepTCR for Python 3.10 and TensorFlow 2.12, as noted in its <a href="https://github.com/sidhomj/DeepTCR/commit/715f6642292a296aa22ffba1b219908fd5af5c5f">release notes</a>.</p>
 <p>I earned my <a href="#education">MSc in Computer Science: Artificial Intelligence and Machine Learning</a> from Woolf through Scaler Neovarsity, with a <strong>4.0/4.0 GPA and 90 ECTS credits</strong>.</p>
 <p>For the ADA Consortium’s Biomni-AD challenge I ran a <a href="#project-biomni">Biomni agent workflow</a> that proposed ten Alzheimer’s drug repurposing hypotheses. The entry was one of three <a href="https://www.adaconsortium.com/competition">winners of the Round 1 Biomni-AD Discovery Prize</a>.</p>
 <p>I also work on how language models behave. My <a href="#project-tara">TARA project</a> asks when a model calls a tool it doesn’t need, and my <a href="#project-refusal">BlueDot Impact project</a> asked whether refusal directions differ by harm category.</p>
+</details>
 </div>
 <figure class="profile-card">
 <img alt="Portrait of Mateenah Jahan" class="profile-photo" height="640" src="assets/illustrations/mateenah-academic-headshot.jpg" width="640"/>
 </figure></div>
 </div>
-</section><section class="section alt" id="projects">
+</section><section class="section research-map" id="research-map" data-research-map="inline" aria-labelledby="map-title">
+<div class="container">
+<div class="section-header">
+<div class="section-title"><h2 id="map-title">Research map</h2></div>
+<p>Choose a project to see its data, methods, collaborators and results.</p>
+</div>
+<div class="map-controls" hidden>
+<label for="project-select">Project</label>
+<select id="project-select" name="project"></select>
+</div>
+<div class="map-layout" hidden>
+<div class="map-graph-panel">
+<div class="map-panel-heading">
+<h3 id="graph-heading">Projects and connections</h3>
+<a href="#connections-text">Read as a list</a>
+</div>
+<div class="map-graph">
+<svg id="research-graph" role="group" aria-labelledby="svg-title svg-desc" viewBox="0 0 1000 630">
+<title id="svg-title">Research connections</title>
+<desc id="svg-desc">Select an item to see its details.</desc>
+<g id="graph-content"></g>
+</svg>
+</div>
+</div>
+<section class="map-selection" aria-labelledby="selection-title">
+<div aria-live="polite" aria-atomic="true">
+<p class="map-selection-type" id="selection-type"></p>
+<h3 id="selection-title" tabindex="-1"></h3>
+<p id="selection-summary"></p>
+<p class="map-selection-stage" id="selection-stage" hidden></p>
+</div>
+<div class="map-source-links" id="selection-sources"></div>
+<figure class="map-figure" hidden id="selection-figure"></figure>
+<button class="map-return" hidden id="reset-project" type="button">Back to selected project</button>
+</section>
+<details class="map-text-connections" aria-labelledby="text-heading" id="connections-text">
+<summary id="text-heading">Connections and sources</summary>
+<ul id="connection-list"></ul>
+</details>
+</div>
+<div class="map-fallback">
+<ul><li><a href="#project-59">Fellowship manuscript</a></li><li><a href="#project-deeptcr">DeepTCR results and code</a></li><li><a href="#project-tara">TARA results</a></li><li><a href="#project-medgemma">MedGemma dataset</a></li><li><a href="#applied-ml">Applied Machine Learning</a></li></ul>
+</div>
+</div>
+</section>
+<section class="section alt" id="projects">
 <div class="container">
 <div class="section-header">
 <div class="section-title">
@@ -72,28 +127,36 @@
 <h2>Research</h2>
 </div>
 </div>
-<div class="project-featured-grid" id="research-output">
+<nav class="research-index" aria-label="Research areas">
+<a href="#biological-research">Computational biology</a>
+<a href="#interpretability-research">AI interpretability</a>
+</nav>
+<div id="research-output">
+<h3 class="research-area" id="biological-research">Computational biology</h3>
+<div class="project-featured-grid">
 <article class="card project-featured" id="project-59">
-<h3>Sex-chromosome expression and annotated donor sex in drug-perturbation cell lines</h3>
+<h4>Sex-chromosome expression and annotated donor sex in drug-perturbation cell lines</h4>
 <p>Of 49 Tahoe-100M cell lines with a recorded donor sex, 27 lacked the expected Y-gene or XIST expression pattern. Bulk RNA sequencing from other cultures agreed with the measured patterns in 47 of 49 lines. The study compiled expression records for 1,123 cell lines.</p>
 <p class="research-meta" id="project-59-details">Tests of gene-expression responses to 114 LINCS2020 compounds across 41 cell lines were inconclusive. The intervals were wide, and the XIST comparison also differed in the vehicle control.</p>
-<p>My part was the CMap and GTEx screen that came first (50 compounds, 44 tissues) and checking the GTEx sign convention. The Tahoe-100M and LINCS2020 analyses were planned, coded and run with Claude Code and rerun with OpenAI Codex, as the manuscript’s AI-use statement describes. Dr. Ben Guebila advised on the study design.</p>
 <div class="project-links">
-<a class="link" href="https://github.com/MateenahJAHAN/Project-59-CMAP-Sex-Differences/blob/main/manuscript/manuscript.pdf">Draft manuscript (PDF)</a>
-<a class="link" href="https://github.com/MateenahJAHAN/Project-59-CMAP-Sex-Differences/blob/main/manuscript/supplement.pdf">Supplement (PDF)</a>
+<a class="link" href="assets/papers/fellowship-manuscript.pdf">Manuscript (PDF)</a>
+<a class="link" href="assets/papers/fellowship-supplement.pdf">Supplement (PDF)</a>
+<a class="link" href="https://github.com/MateenahJAHAN/Project-59-CMAP-Sex-Differences/blob/main/manuscript/followups/marker_stability/marker_stability.pdf">Marker persistence follow-up (PDF)</a>
 <a class="link" href="https://github.com/MateenahJAHAN/Project-59-CMAP-Sex-Differences/tree/main/verification">Results</a>
 <a class="link" href="https://github.com/MateenahJAHAN/Project-59-CMAP-Sex-Differences/tree/main/analysis">Code</a>
 </div>
 
+<figure class="research-figure"><a href="https://github.com/MateenahJAHAN/Project-59-CMAP-Sex-Differences/blob/main/manuscript/figures/fig1_design.pdf"><img src="assets/research/fellowship-study-design.png" width="1950" height="732" loading="lazy" decoding="async" alt="Two workflows: compare vehicle-cell Y-gene and XIST expression with donor labels and other assays, and use bulk RNA sequencing to compare LINCS2020 drug responses within lineage."></a><figcaption>How the Tahoe-100M and LINCS2020 comparisons were constructed</figcaption></figure>
 <details class="project-evidence">
-<summary>Methods</summary>
+<summary>Methods and contributions</summary>
+<p>My part was the CMap and GTEx screen that came first (50 compounds, 44 tissues) and checking the GTEx sign convention. The Tahoe-100M and LINCS2020 analyses were planned, coded and run with Claude Code and rerun with OpenAI Codex, as the manuscript’s AI-use statement describes. Dr. Ben Guebila advised on the study design.</p>
 <p>The Tahoe analysis scored eight Y-chromosome genes and XIST in vehicle-treated cells. The LINCS2020 analysis compared drug responses within 11 lineages using marker calls from bulk RNA sequencing. The <a href="https://github.com/MateenahJAHAN/Project-59-CMAP-Sex-Differences#how-the-analysis-developed">CMap and GTEx screen</a> covered 50 compounds and 44 tissues.</p>
-<figure><a href="https://github.com/MateenahJAHAN/Project-59-CMAP-Sex-Differences/blob/main/manuscript/figures/fig1_design.pdf"><img src="assets/research/fellowship-study-design.png" width="1950" height="732" loading="lazy" decoding="async" alt="Two workflows: compare vehicle-cell Y-gene and XIST expression with donor labels and other assays, and use bulk RNA sequencing to compare LINCS2020 drug responses within lineage."></a><figcaption>Study design</figcaption></figure>
+
 </details>
 </article><article class="card project-featured" id="project-deeptcr">
-<h3>Predicting CD19 CAR-T response with DeepTCR</h3>
+<h4>Predicting CD19 CAR-T response with DeepTCR</h4>
 <p>At CSIR-IGIB (Aug 2025 to Jan 2026, with Dr. Sherry Bhalla) I trained DeepTCR classifiers on 239,637 TCRβ sequences from 34 patients with B-cell lymphoma, 18 of whom responded to CD19 CAR-T therapy. I also helped update the framework for Python 3.10 and TensorFlow 2.12.</p>
-<p class="research-meta">My trainee report gave an AUC of 0.754. That figure came from a split by sequence, so each patient’s sequences appeared in both training and test, and it does not measure prediction for new patients. In November 2026 the model was re-evaluated with whole patients held out, using AI coding agents. Across ten five-fold evaluations the median AUROC was 0.456 (range 0.298–0.579), against 0.386 for a matched composition baseline. With 34 patients, this did not show that the model predicts response.</p>
+<p>With whole patients held out, the median AUROC was 0.456 across ten evaluations. The model did not reliably predict response in a new patient.</p>
 <div class="project-links">
 <a class="link" href="https://github.com/MateenahJAHAN/Final_Deliverable_DeepTCRResearch_Mateenah_Jahan_CSIR/blob/773b8c4d4de3006344b10b796491418325870207/validation/repeated-patient-cv/REPORT.md">Results</a>
 <a class="link" href="https://github.com/MateenahJAHAN/Final_Deliverable_DeepTCRResearch_Mateenah_Jahan_CSIR/blob/ce1fa3a421edb9f4025a45cb79dc7b014867ad83/paper/main.pdf">Trainee report (January 2026)</a>
@@ -101,12 +164,14 @@
 <a class="link" href="https://github.com/sidhomj/DeepTCR/commit/715f6642292a296aa22ffba1b219908fd5af5c5f">DeepTCR release notes</a>
 </div>
 
+<figure class="research-figure"><a href="https://github.com/MateenahJAHAN/Final_Deliverable_DeepTCRResearch_Mateenah_Jahan_CSIR/blob/773b8c4d4de3006344b10b796491418325870207/figures/correction/repeated-patient-auroc.png"><img src="assets/research/deeptcr-repeated-patient-auroc.png" width="2340" height="855" loading="lazy" decoding="async" alt="Within-fold patient AUROC for DeepTCR with two training seeds and for a composition baseline, across five patient splits. Most points fall below 0.5."></a><figcaption>DeepTCR and a composition baseline across patient-held-out splits</figcaption></figure>
 <details class="project-evidence">
-<summary>Results by split</summary>
-<figure><a href="https://github.com/MateenahJAHAN/Final_Deliverable_DeepTCRResearch_Mateenah_Jahan_CSIR/blob/773b8c4d4de3006344b10b796491418325870207/figures/correction/repeated-patient-auroc.png"><img src="assets/research/deeptcr-repeated-patient-auroc.png" width="2340" height="855" loading="lazy" decoding="async" alt="Within-fold patient AUROC for DeepTCR with two training seeds and for a composition baseline, across five patient splits. Most points fall below 0.5."></a><figcaption>AUROC by patient split</figcaption></figure>
+<summary>How the validation changed the result</summary>
+<p class="research-meta">My trainee report gave an AUC of 0.754. That figure came from a split by sequence, so each patient’s sequences appeared in both training and test, and it does not measure prediction for new patients. In November 2026 the model was re-evaluated with whole patients held out, using AI coding agents. Across ten five-fold evaluations the median AUROC was 0.456 (range 0.298–0.579), against 0.386 for a matched composition baseline. With 34 patients, this did not show that the model predicts response.</p>
+
 </details>
 </article><article class="card project-featured" id="project-biomni">
-<h3>Alzheimer’s drug repurposing with Biomni agents</h3>
+<h4>Alzheimer’s drug repurposing with Biomni agents</h4>
 <p>For the ADA Consortium’s Biomni-AD challenge (March 2026) I ran a Biomni agent workflow, set up with Claude Code. It drew on 2,331 genes with a reported Alzheimer’s association in the GWAS Catalog and looked up drug targets in Open Targets and ChEMBL. The literature search step failed, so the ranking of ten candidate drugs and their scores came from the language model itself. These are untested hypotheses. The entry was one of three Round 1 winners of the Biomni-AD Discovery Prize.</p>
 <div class="project-links">
 <a class="link" href="https://github.com/MateenahJAHAN/biomni-ad-drug-repurposing">Code</a>
@@ -118,15 +183,19 @@
 <figure><a href="https://github.com/MateenahJAHAN/biomni-ad-drug-repurposing/blob/e78b8c81dc96c89f538e3b4bb9e3686187300089/results/drug_repurposing_scores.png"><img src="assets/research/biomni-candidate-scores.png" width="2970" height="1764" loading="lazy" decoding="async" alt="Chart ranking computational drug repurposing hypotheses for Alzheimer’s disease."></a><figcaption>Scores the agent assigned to the 10 candidates</figcaption></figure>
 </details>
 </article><article class="card project-featured" id="project-medgemma">
-<h3>MedGemma on hematologic oncology questions</h3>
+<h4>MedGemma on hematologic oncology questions</h4>
 <p>I used 13 prompts to look for gaps in MedGemma 4B’s answers about hematologic oncology and related topics. I ran 11 prompts on the pretrained and instruction-tuned variants and two controls on the instruction-tuned variant only. The dataset includes the prompts, reference answers, model outputs, and notes.</p>
 <a class="link" href="https://huggingface.co/datasets/Mateenah/medgemma-4b-hematologic-oncology-blind-spots">Dataset</a>
-</article><article class="card project-featured" id="project-tara">
-<h3>When does a language model call a tool it doesn’t need?</h3>
+</article></div>
+<h3 class="research-area" id="interpretability-research">AI interpretability</h3>
+<div class="project-featured-grid">
+<article class="card project-featured" id="project-tara">
+<h4>When does a language model call a tool it doesn’t need?</h4>
 <p>For my TARA project, two small Qwen models were given the same tools in two ways: as a plain-text list and through the model’s native tool interface. On 20 paired requests, the native interface produced more calls to tools the request did not need on both models: 19/20 against 14/20 for Qwen2.5 1.5B, and 10/20 against 0/20 for Qwen3.5 4B.</p>
 <p class="research-meta">An activation-steering test at a small strength (0.01) left unneeded calls at 2/8 on a held-out Qwen2.5 set, so it does not show whether steering can help. Claude Code drafted the study design and code, and AI coding assistants helped run the experiments.</p>
 <div class="project-links">
-<a class="link" href="https://github.com/MateenahJAHAN/tara-chat-tool-study/blob/main/followup_v2_tool_applicability/RESULTS.md">Results</a>
+<a class="link" href="https://github.com/MateenahJAHAN/tara-chat-tool-study/blob/main/followup_v3_tool_documentation/TARA_Tool_Applicability.pdf">Tool descriptions paper (PDF)</a>
+<a class="link" href="https://github.com/MateenahJAHAN/tara-chat-tool-study/blob/main/followup_v2_tool_applicability/RESULTS.md">Paired-request results</a>
 <a class="link" href="https://github.com/MateenahJAHAN/tara-chat-tool-study">Code</a>
 </div>
 <details class="project-evidence">
@@ -135,16 +204,54 @@
 <figure><a href="https://github.com/MateenahJAHAN/tara-chat-tool-study/blob/main/reporting/figures_heldout_final/01_behaviour_rates.png"><img src="assets/research/tara-held-out.png" width="1801" height="854" loading="lazy" decoding="async" alt="Rates of tool calls and abstention for the text list and native tool interfaces on the TARA study’s held-out cases."></a><figcaption>Tool calls on held-out requests</figcaption></figure>
 </details>
 </article><article class="card project-featured" id="project-refusal">
-<h3>Do harm categories have different refusal directions?</h3>
+<h4>Do harm categories have different refusal directions?</h4>
 <p>For the BlueDot Impact project sprint I asked whether Qwen2.5-1.5B-Instruct has one refusal direction or a separate one for each kind of harmful request. I estimated a direction for each of four harm categories. They were less alike than after shuffling the category labels (mean cosine similarity 0.84 against 0.98, p = 0.003).</p>
 <p class="research-meta">Each direction also shifted the model’s answers on harmless prompts (KL divergence 0.13 to 1.68), so I can’t yet say they are specific to refusal. AI coding assistants helped with the code and the write-up.</p>
 <div class="project-links">
+<a class="link" href="https://github.com/MateenahJAHAN/refusal-categories/blob/main/followup_v2_refusal_measurement/BlueDot_Refusal_Measurement.pdf">Refusal measurement paper (PDF)</a>
 <a class="link" href="https://github.com/MateenahJAHAN/refusal-categories">Code</a>
 <a class="link" href="https://huggingface.co/datasets/Mateenah/refusal-categories-results/blob/917856ed158f4dcb70ade8b5a49f0cf4accce71c/results_v0.2.json">Results (JSON)</a>
 <a class="link" href="https://github.com/MateenahJAHAN/refusal-categories#kl-gate-replay">Harmless-prompt check</a>
 </div>
-</article></div></div>
+</article></div></div></div>
 </section>
+<section class="section alt" id="applied-ml">
+<div class="container">
+<div class="section-header"><div class="section-title">
+<img src="assets/icons/data.svg" class="section-icon" alt="" aria-hidden="true" width="24" height="24">
+<h2>Applied machine learning</h2>
+</div></div>
+<div class="applied-project-groups">
+<section class="card applied-project-group">
+<h3>Predictive modelling</h3>
+<ul>
+<li><h4>AdEase · Wikipedia page-view forecasting</h4><p>Compared ARIMA, SARIMAX, and Prophet for 60-day forecasts with campaign indicators and seasonality. <a href="https://github.com/MateenahJAHAN/adease-wikipedia-timeseries-forecasting">Repository</a></p></li>
+<li><h4>Zee · Movie recommendation</h4><p>Compared item-based collaborative filtering, cosine similarity and SVD on movie ratings. <a href="https://github.com/MateenahJAHAN/Zee-Recommender-Systems">Repository</a></p></li>
+<li><h4>Loan default · Imbalanced classification</h4><p>Evaluated logistic regression on synthetic data using ROC and precision–recall curves, threshold analysis and coefficient explanations. <a href="https://github.com/MateenahJAHAN/Predictive-Analytics-in-Asymmetric-Data-A-Robust-Classification-Framework">Repository</a></p></li>
+</ul>
+</section>
+<section class="card applied-project-group">
+<h3>Research software</h3>
+<ul>
+<li><h4>Synapse / BoldConnect</h4><p>Built a FastMCP interface for ligand–receptor scoring and screening. The demo uses a placeholder scoring model. <a href="https://github.com/MateenahJAHAN/BoldConnect">Repository</a></p></li>
+<li><h4>DiffGuard / NeuroDiff</h4><p>Built a Python and PyTorch prototype to compare model weights and activations. <a href="https://github.com/MateenahJAHAN/Differential-Model-Alignment">Repository</a></p></li>
+</ul>
+</section>
+<section class="card applied-project-group">
+<h3>Statistical case studies</h3>
+<ul>
+<li><h4>Demand and customer analytics</h4><p><a href="https://github.com/MateenahJAHAN/Yulu-Electric-Cycle-Demand-Analysis-">Yulu cycle demand</a> tested season and weather effects. <a href="https://github.com/MateenahJAHAN/Walmart-Black-Friday-Sales-Analysis">Walmart sales</a> estimated spending by segment. <a href="https://github.com/MateenahJAHAN/AeroFit-Treadmill-Customer-Profiling">AeroFit profiling</a> compared customer groups by model.</p></li>
+<li><h4>Content and public data</h4><p><a href="https://github.com/MateenahJAHAN/Netflix-data-project">Netflix content analysis</a> explored titles and market coverage.</p></li>
+</ul>
+</section>
+</div>
+</div>
+</section>
+<section class="section" id="github-activity" aria-labelledby="activity-title"><div class="container">
+<div class="section-header"><div class="section-title"><h2 id="activity-title">GitHub contributions</h2></div></div>
+<a class="contribution-calendar" aria-label="View Mateenah Jahan’s contribution activity on GitHub" href="https://github.com/MateenahJAHAN?tab=overview">
+<img src="https://ghchart.rshah.org/0f766e/MateenahJAHAN" width="663" height="104" alt="Contribution calendar for Mateenah Jahan over the past year." loading="lazy" decoding="async">
+<span>View activity on GitHub <span aria-hidden="true">↗</span></span></a></div></section>
 <section class="section" id="experience">
 <div class="container">
 <div class="section-header">

@@ -110,7 +110,7 @@ section :is(article, details)[id] {
 }
 
 .about-text p {
-  max-width: none;
+  max-width: 72ch;
   margin: 0 0 0.9rem;
   font-size: 1rem;
 }
@@ -215,8 +215,70 @@ section :is(article, details)[id] {
   gap: 0.65rem;
 }
 
-.project-featured h3 {
-  margin-bottom: 0;
+.project-featured h4 {
+  margin: 0;
+  font: 650 1.22rem/1.25 var(--font-heading);
+  text-wrap: balance;
+}
+
+.research-bio summary {
+  width: fit-content;
+  padding-block: 0.45rem;
+  cursor: pointer;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.research-bio[open] summary { margin-bottom: 0.5rem; }
+.about-text .application-line { color: var(--muted); }
+
+.research-index {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
+  border-block: 1px solid var(--border);
+}
+
+.research-index a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.research-area {
+  scroll-margin-top: 6rem;
+  margin: 1.5rem 0 0.8rem;
+  font-size: 1.2rem;
+}
+
+.project-featured-grid + .research-area { margin-top: var(--section-space); }
+
+.research-figure {
+  align-self: stretch;
+  margin: 0;
+}
+
+.research-figure a,
+.research-figure img {
+  display: block;
+  width: 100%;
+}
+
+.research-figure img {
+  height: auto;
+  border: 1px solid var(--border);
+  border-radius: 0.4rem;
+  background: var(--card);
+}
+
+.research-figure figcaption {
+  margin-top: 0.3rem;
+  font-size: 0.87rem;
+  color: var(--muted);
 }
 
 .project-featured-chips,
