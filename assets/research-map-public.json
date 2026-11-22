@@ -489,10 +489,11 @@
       "id": "myeloma",
       "type": "project",
       "label": "GPU-accelerated myeloma genomics",
-      "summary": "An academic collaboration on GPU deployment, cancer variant annotation, and research reporting for the Multiple Myeloma division at Icahn Mount Sinai.",
+      "summary": "I worked with Ali Quidwai and other computational scientists at Icahn Mount Sinai on GPU processing, variant annotation, and reporting for the multiple myeloma team at the Mount Sinai Tisch Cancer Center.",
       "source_ids": [
         "myeloma_account",
-        "myeloma_arch"
+        "myeloma_arch",
+        "tisch_center"
       ],
       "group": "Research software"
     },
@@ -524,6 +525,16 @@
       "source_ids": [
         "myeloma_account",
         "myeloma_arch"
+      ]
+    },
+    {
+      "id": "ali_quidwai",
+      "type": "person",
+      "label": "Ali Quidwai",
+      "summary": "Computational scientist at the Icahn School of Medicine at Mount Sinai. Collaborated on the Multiple Myeloma Analysis Platform.",
+      "source_ids": [
+        "mmap_lab",
+        "myeloma_account"
       ]
     }
   ],
@@ -958,6 +969,18 @@
         "myeloma_account",
         "myeloma_arch"
       ]
+    },
+    {
+      "id": "myeloma--collaborator--ali_quidwai",
+      "source": "myeloma",
+      "target": "ali_quidwai",
+      "type": "collaboratedWith",
+      "label": "Research collaborator",
+      "reverse_label": "Collaborated on",
+      "source_ids": [
+        "myeloma_account",
+        "mmap_lab"
+      ]
     }
   ],
   "sources": [
@@ -1175,6 +1198,16 @@
       "id": "bluedot_paired",
       "label": "Refusals by person and wording",
       "url": "https://github.com/MateenahJAHAN/refusal-categories/blob/main/followup_v2_refusal_measurement/smol_names/person_pairs.csv"
+    },
+    {
+      "id": "mmap_lab",
+      "label": "Laganà Lab team",
+      "url": "https://laganalab.org/people/"
+    },
+    {
+      "id": "tisch_center",
+      "label": "Mount Sinai Tisch Cancer Center",
+      "url": "https://icahn.mssm.edu/research/tisch"
     }
   ]
 }
