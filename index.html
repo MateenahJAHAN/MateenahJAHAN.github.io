@@ -106,7 +106,7 @@
 <a class="link" href="assets/papers/fellowship-manuscript.pdf">Manuscript (PDF)</a>
 <a class="link" href="assets/papers/fellowship-supplement.pdf">Supplement (PDF)</a>
 <a class="link" href="https://github.com/MateenahJAHAN/Project-59-CMAP-Sex-Differences/blob/main/manuscript/followups/marker_stability/marker_stability.pdf">Marker persistence follow-up (PDF)</a>
-<a class="link" href="https://github.com/MateenahJAHAN/Project-59-CMAP-Sex-Differences/tree/main/verification">Results</a>
+<a class="link" href="https://github.com/MateenahJAHAN/Project-59-CMAP-Sex-Differences/tree/main/verification/source_replay">Source-data verification</a>
 <a class="link" href="https://github.com/MateenahJAHAN/Project-59-CMAP-Sex-Differences/tree/main/analysis">Code</a>
 </div>
 </aside>
@@ -115,40 +115,40 @@
 <details class="project-evidence">
 <summary>Methods and contributions</summary>
 <p>My part was the CMap and GTEx screen that came first (50 compounds, 44 tissues) and checking the GTEx sign convention. The Tahoe-100M and LINCS2020 analyses were planned, coded and run with Claude Code and rerun with OpenAI Codex, as the manuscript’s AI-use statement describes. Dr. Ben Guebila advised on the study design.</p>
-<p>The Tahoe analysis scored eight Y-chromosome genes and XIST in vehicle-treated cells. The LINCS2020 analysis compared drug responses within 11 lineages using marker calls from bulk RNA sequencing. The <a href="https://github.com/MateenahJAHAN/Project-59-CMAP-Sex-Differences#how-the-analysis-developed">CMap and GTEx screen</a> covered 50 compounds and 44 tissues.</p>
+<p>The Tahoe analysis scored eight Y-chromosome genes and XIST in vehicle-treated cells. The LINCS2020 analysis compared drug responses within 11 lineages using marker calls from bulk RNA sequencing. The two assays agreed on marker expression in 47 of 49 cell lines and on the state name in 46. A498 expressed XIST alone in both assays, but the two classification rules assigned it different names.</p>
 
 </details>
 </article><article class="card project-featured" id="project-deeptcr">
 <h4>Predicting CD19 CAR-T response with DeepTCR</h4>
 <p>At CSIR-IGIB (Aug 2025 to Jan 2026, with Dr. Sherry Bhalla) I trained DeepTCR classifiers on beta-chain sequences from 34 patients with B-cell lymphoma, 18 of whom responded to CD19 CAR-T therapy. I also helped update the framework for Python 3.10 and TensorFlow 2.12.</p>
-<p>The published evaluation scored 239,634 eligible sequence records. Holding out whole patients gave a median AUROC of 0.456 across ten evaluations. The model did not reliably predict response in a new patient.</p>
+<p>When whole patients were held out, DeepTCR’s median AUROC was 0.518 across ten evaluations (range 0.386–0.737). The wide spread across splits of the same 34 patients leaves prediction in a new cohort unresolved.</p>
 <aside class="entry-margin">
 <figure class="readout">
-<svg viewBox="0 0 304 76" role="img" aria-label="AUROC on a scale from 0 to 1. Split by sequence: 0.754. Whole patients held out: median 0.456, range 0.298 to 0.579. Chance is 0.5.">
+<svg viewBox="0 0 304 76" role="img" aria-label="AUROC on a scale from 0 to 1. Whole patients held out. DeepTCR median 0.518, range 0.386 to 0.737. Composition baseline median 0.386. Chance is 0.5.">
 <line x1="8" x2="296" y1="52" y2="52" stroke="#94a3b8"/>
 <line x1="152.0" x2="152.0" y1="20" y2="52" stroke="#94a3b8" stroke-dasharray="3 3"/>
 <line x1="8" x2="8" y1="48" y2="56" stroke="#94a3b8"/><line x1="296" x2="296" y1="48" y2="56" stroke="#94a3b8"/>
-<rect x="93.8" y="31" width="81.0" height="6" rx="3" fill="#1a56a0" opacity="0.3"/>
-<circle cx="139.3" cy="34" r="7" fill="#1a56a0"/>
-<circle cx="225.2" cy="34" r="6" fill="#fff" stroke="#1a56a0" stroke-width="2"/>
-<text class="value" x="139.3" y="15" text-anchor="end">0.456</text>
-<text class="value" x="225.2" y="15" text-anchor="middle">0.754</text>
+<rect x="119.2" y="31" width="101.0" height="6" rx="3" fill="#1a56a0" opacity="0.3"/>
+<circle cx="157.1" cy="34" r="7" fill="#1a56a0"/>
+<circle cx="119.2" cy="34" r="6" fill="#fff" stroke="#1a56a0" stroke-width="2"/>
+<text class="value" x="157.1" y="15" text-anchor="start">0.518</text>
+<text class="value" x="119.2" y="15" text-anchor="end">0.386</text>
 <text x="8" y="71">0</text><text x="152.0" y="71" text-anchor="middle">0.5, chance</text><text x="296" y="71" text-anchor="end">1</text>
 </svg>
-<figcaption>Open: AUC from a split by sequence. Filled: median AUROC with whole patients held out. The bar is the range over ten evaluations.</figcaption>
+<figcaption>Filled and open circles mark the median AUROC for DeepTCR and the sequence-composition baseline, respectively. The bar spans the ten DeepTCR evaluations.</figcaption>
 </figure>
 <div class="project-links">
-<a class="link" href="https://github.com/MateenahJAHAN/Final_Deliverable_DeepTCRResearch_Mateenah_Jahan_CSIR/blob/main/validation/repeated-patient-cv/REPORT.md">Results</a>
+<a class="link" href="https://github.com/MateenahJAHAN/Final_Deliverable_DeepTCRResearch_Mateenah_Jahan_CSIR/blob/main/validation/repeated-patient-cv/REPORT.md">Patient-held-out results</a>
 <a class="link" href="https://github.com/MateenahJAHAN/Final_Deliverable_DeepTCRResearch_Mateenah_Jahan_CSIR/blob/main/paper/main.pdf">Research paper (PDF)</a>
 <a class="link" href="https://github.com/MateenahJAHAN/Deep-TCR---All-tutorial-working">Code and tutorials</a>
 <a class="link" href="https://github.com/sidhomj/DeepTCR/commit/715f6642292a296aa22ffba1b219908fd5af5c5f">DeepTCR release notes</a>
 </div>
 </aside>
 
-<figure class="research-figure"><a href="https://github.com/MateenahJAHAN/Final_Deliverable_DeepTCRResearch_Mateenah_Jahan_CSIR/blob/main/figures/correction/repeated-patient-auroc.png"><img src="assets/research/deeptcr-repeated-patient-auroc.png" width="2340" height="855" loading="lazy" decoding="async" alt="Within-fold patient AUROC for DeepTCR with two training seeds and for a composition baseline, across five patient splits. Most points fall below 0.5."></a><figcaption>DeepTCR and a composition baseline across patient-held-out splits</figcaption></figure>
+<figure class="research-figure"><a href="https://github.com/MateenahJAHAN/Final_Deliverable_DeepTCRResearch_Mateenah_Jahan_CSIR/blob/main/figures/correction/repeated-patient-auroc.png"><img src="assets/research/deeptcr-repeated-patient-auroc.png" width="2340" height="855" loading="lazy" decoding="async" alt="Within-fold patient AUROC for DeepTCR with two training seeds and for a composition baseline, across five patient splits. A second panel shows the three- and four-fold sensitivity checks."></a><figcaption>DeepTCR and a composition baseline across patient-held-out splits</figcaption></figure>
 <details class="project-evidence">
 <summary>How the validation changed the result</summary>
-<p class="research-meta">My trainee report gave an AUC of 0.754. That figure came from a split by sequence, so each patient’s sequences appeared in both training and test, and it does not measure prediction for new patients. In November 2026 the model was re-evaluated with whole patients held out, using AI coding agents. Across ten five-fold evaluations the median AUROC was 0.456 (range 0.298–0.579), against 0.386 for a matched composition baseline. With 34 patients, this did not show that the model predicts response.</p>
+<p class="research-meta">My trainee report gave an AUC of 0.754 when sequences from every patient appeared in both training and testing. The rerun, carried out with AI coding agents, grouped all 239,634 eligible records by patient. Across five partitions and two training seeds, DeepTCR outscored the matched sequence-composition baseline in nine of ten evaluations. On a <a href="https://github.com/MateenahJAHAN/Final_Deliverable_DeepTCRResearch_Mateenah_Jahan_CSIR/blob/main/validation/patient-grouped-deeptcr/aggregate_results.json">separate five-fold split</a>, it ranked 19 of 57 responder–nonresponder pairs correctly (AUROC 0.333).</p>
 
 </details>
 </article><article class="card project-featured" id="project-biomni">
@@ -231,7 +231,7 @@
 <h3 class="research-area" id="research-software">Research software</h3>
 <article class="card project-featured" id="project-myeloma">
 <h4>GPU-accelerated genomics for multiple myeloma</h4>
-<p>I collaborated with Ali Quidwai and other computational scientists at the Icahn School of Medicine at Mount Sinai on a sequencing workflow for the multiple myeloma team at the <a href="https://icahn.mssm.edu/research/tisch">Mount Sinai Tisch Cancer Center</a>. I helped integrate NVIDIA Parabricks on H100 GPUs, annotate cancer variants with CIViC evidence, and write the functions that turn TSV and CSV outputs into a final research report.</p>
+<p>I worked with Ali Quidwai and other computational scientists at the Icahn School of Medicine at Mount Sinai on the Multiple Myeloma Analysis Platform (MMAP), a sequencing workflow for the multiple myeloma team at the <a href="https://www.mountsinai.org/care/cancer/services/multiple-myeloma/about">Mount Sinai Tisch Cancer Center</a>. I helped integrate NVIDIA Parabricks and tune its deployment on H100 GPUs, add CIViC evidence to variant annotations, and write functions that turn TSV and CSV outputs into a research report.</p>
 <aside class="entry-margin">
 <div class="project-links">
 <a class="link" href="https://github.com/MateenahJAHAN/myeloma-genomics-parabricks">My contribution</a>

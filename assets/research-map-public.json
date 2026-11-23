@@ -25,7 +25,7 @@
       "id": "csir_tcr",
       "label": "T-cell receptors and CAR-T response",
       "type": "project",
-      "summary": "With whole patients held out, the median AUROC was 0.456 across ten five-fold evaluations of 34 patients. The sequence-level result did not carry over to new patients.",
+      "summary": "With whole patients held out, DeepTCR’s median AUROC was 0.518 (range 0.386–0.737) across ten evaluations of the same 34 patients. Performance in an independent cohort remains untested.",
       "source_ids": [
         "cv",
         "csir"
@@ -255,7 +255,7 @@
       "id": "tcr_output",
       "label": "Patient-held-out validation",
       "type": "output",
-      "summary": "Across ten five-fold evaluations, the median AUROC was 0.456 for DeepTCR and 0.386 for the composition baseline.",
+      "summary": "Across ten five-fold evaluations, median within-fold AUROC was 0.518 for DeepTCR and 0.386 for the sequence-composition baseline. DeepTCR ranked higher in nine matched evaluations.",
       "source_ids": [
         "cv"
       ]
@@ -1207,7 +1207,7 @@
     {
       "id": "tisch_center",
       "label": "Mount Sinai Tisch Cancer Center",
-      "url": "https://icahn.mssm.edu/research/tisch"
+      "url": "https://www.mountsinai.org/care/cancer/services/multiple-myeloma/about"
     }
   ]
 }
