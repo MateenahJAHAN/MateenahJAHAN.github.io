@@ -62,7 +62,7 @@
 <p>Before that I was a research trainee at the Council of Scientific and Industrial Research’s Institute of Genomics and Integrative Biology (CSIR-IGIB) with <a href="https://igib.res.in/Scientists/sherry-bhalla">Dr. Sherry Bhalla</a>. I trained <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7952906/">DeepTCR</a> models using paired-chain sequencing data from 34 patients to study response to CD19 CAR-T therapy. When whole patients were held out, the model did not reliably predict response. The <a href="#project-deeptcr">patient-held-out evaluation</a> shows how the choice of split changed the result. I also helped update DeepTCR for Python 3.10 and TensorFlow 2.12, as noted in its <a href="https://github.com/sidhomj/DeepTCR/commit/715f6642292a296aa22ffba1b219908fd5af5c5f">release notes</a>.</p>
 <p>I earned my <a href="#education">MSc in Computer Science: Artificial Intelligence and Machine Learning</a> from Woolf through Scaler Neovarsity, with a <strong>4.0/4.0 GPA and 90 ECTS credits</strong>.</p>
 <p>For the ADA Consortium’s Biomni-AD challenge I ran a <a href="#project-biomni">Biomni agent workflow</a> that proposed ten Alzheimer’s drug repurposing hypotheses. The entry was one of three <a href="https://www.adaconsortium.com/competition">winners of the Round 1 Biomni-AD Discovery Prize</a>.</p>
-<p>I also work on how language models behave. My <a href="#project-tara">TARA project</a> asks when a model calls a tool it doesn’t need, and my <a href="#project-refusal">BlueDot Impact project</a> tests how question wording changes a model’s decision to refuse.</p>
+<p>I also work on how language models behave. In <a href="#project-tara">TARA</a>, I studied when a model attempts to call an irrelevant tool. In my <a href="#project-refusal">BlueDot Impact sprint</a>, I studied whether different kinds of refusal share a pattern in the model’s activations.</p>
 </details>
 </div>
 <figure class="profile-card">
@@ -178,8 +178,8 @@
 <div class="project-featured-grid">
 <article class="card project-featured" id="project-tara">
 <h4>When does a language model call a tool it doesn’t need?</h4>
-<p>Does a model read what a tool can do, or does a familiar word prompt it to call the tool? In my TARA study, Qwen2.5 sometimes called an out-of-area service when its documentation office happened to be in the requested district. The effect disappeared on 12 questions drawn from two independent tool-use benchmarks: matching the office city changed false calls from four to three.</p>
-<p class="research-meta">An activation-steering test at a small strength (0.01) left unneeded calls at 2/8 on a held-out Qwen2.5 set, so it does not show whether steering can help. Claude Code drafted the study design and code, and AI coding assistants helped run the experiments.</p>
+<p>For TARA, I studied whether changing how tools are presented affects Qwen2.5’s decision to call one. On 32 requests where no tool applied, Qwen attempted 9 calls with a plain-text tool list and 16 with its native tool format. Claude Code drafted the original design and code.</p>
+<p class="research-meta">In a <a href="https://github.com/MateenahJAHAN/tara-chat-tool-study/blob/main/CONTRIBUTIONS.md">follow-up designed and run by Codex</a>, Qwen sometimes tried an out-of-area service when its documentation office was in the requested district. On 12 questions from independent benchmarks, moving the office to the requested city changed false attempts from four to three.</p>
 <aside class="entry-margin">
 <figure class="readout">
 <div role="img" aria-label="False tool calls on 12 independent questions: 4 when the documentation office was in another city, 3 when it was in the requested city.">
@@ -199,13 +199,14 @@
 </aside>
 <figure class="research-figure"><a href="https://github.com/MateenahJAHAN/tara-chat-tool-study/blob/main/followup_v3_tool_documentation/independent_descriptions/catalogue_office_pairs.png"><img src="assets/research/tara-office-city.png" width="2046" height="1232" loading="lazy" decoding="async" alt="Each paired point compares attempted tool calls on an external city question when the documentation office matches or differs from the requested city."></a><figcaption>Tool calls on independent city questions</figcaption></figure>
 <details class="project-evidence">
-<summary>Earlier tool-interface experiment</summary>
-<p>On 32 held-out requests where no tool applied, Qwen2.5 made 9 unneeded calls with the text list and 16 with native tools. <a href="https://github.com/MateenahJAHAN/tara-chat-tool-study/blob/main/study_v1/RESULTS.txt">Results</a></p>
+<summary>Activation steering and tool format</summary>
+<p>With the native tool format, steering Qwen’s activations at the strength selected during development (0.01) left false attempts at 2/8 and reduced correct calls on applicable requests from 7/8 to 6/8. <a href="https://github.com/MateenahJAHAN/tara-chat-tool-study/blob/main/study_v1/RESULTS.txt">Results</a></p>
 <figure><a href="https://github.com/MateenahJAHAN/tara-chat-tool-study/blob/main/reporting/figures_heldout_final/01_behaviour_rates.png"><img src="assets/research/tara-held-out.png" width="1801" height="854" loading="lazy" decoding="async" alt="Rates of tool calls and abstention for the text list and native tool interfaces on the TARA study’s held-out cases."></a><figcaption>Tool calls on held-out requests</figcaption></figure>
 </details>
 </article><article class="card project-featured" id="project-refusal">
 <h4>When does a model refuse a harmless question?</h4>
-<p>In my BlueDot Impact project I tested whether a change in wording could make a model decline an answerable question. Across the same 30 names, Qwen2.5 cited politics in 20 replies to “When did … become a billionaire?” and four to “In what year did … become a billionaire?” SmolLM2 gave no full refusals across all 180 replies. Two blinded AI readers scored refusal behavior. They did not verify the dates.</p>
+<p>In my BlueDot Impact sprint, I compared four refusal directions in Qwen2.5. Intervening on each one also changed predictions on harmless text, leaving open whether any was specific to refusal.</p>
+<p class="research-meta">Codex <a href="https://github.com/MateenahJAHAN/refusal-categories/blob/main/CONTRIBUTIONS.md">designed and ran a follow-up</a> on 30 names. Qwen cited politics in 20 replies to “When did … become a billionaire?” and four to “In what year did … become a billionaire?” SmolLM2 gave no full refusals in 180 replies. Two blinded AI readers scored refusals. The dates were unverified.</p>
 <aside class="entry-margin">
 <figure class="readout">
 <div role="img" aria-label="Replies in which Qwen2.5 declined, citing politics, across the same 30 names: 20 for the wording When did, 4 for the wording In what year did.">
@@ -225,7 +226,7 @@
 </div>
 </aside>
 <figure class="research-figure"><a href="https://github.com/MateenahJAHAN/refusal-categories/blob/main/followup_v2_refusal_measurement/smol_names/model_comparison.png"><img src="assets/research/bluedot-wording.png" width="2510" height="1174" loading="lazy" decoding="async" alt="Full refusals and refusals citing politics for Qwen2.5 and SmolLM2 across three pairs of question wordings about 30 names."></a><figcaption>Refusals across six question wordings</figcaption></figure>
-<details class="project-evidence"><summary>Earlier activation study</summary><p>I estimated four refusal directions in Qwen2.5. Their mean cosine similarity was 0.84, compared with 0.98 after shuffling the category labels. Each direction also changed answers on harmless prompts, leaving its specificity to refusal unresolved. AI coding assistants helped with the code and the write-up.</p></details>
+<details class="project-evidence"><summary>Comparing the four refusal directions</summary><p>The four directions had a mean cosine similarity of 0.84. Shuffling the category labels gave a mean of 0.98 across 300 permutations. Topic and wording could also contribute to the difference.</p></details>
 
 </article></div>
 <h3 class="research-area" id="research-software">Research software</h3>

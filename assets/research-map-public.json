@@ -84,10 +84,11 @@
       "id": "refusal_study",
       "label": "Do models refuse harmless questions?",
       "type": "project",
-      "summary": "For the same 30 names, changing “When did” to “In what year did” reduced political refusals from 20 to four in Qwen2.5. SmolLM2 gave zero full refusals in 180 replies.",
+      "summary": "Mateenah’s BlueDot sprint compared four refusal directions. In a follow-up designed and run by Codex, changing “When did” to “In what year did” reduced Qwen’s political refusals from 20 to four across 30 names. SmolLM2 gave no full refusals in 180 replies.",
       "source_ids": [
         "bluedot_paired",
-        "refusal"
+        "refusal",
+        "refusal_study_contributions"
       ],
       "group": "AI interpretability and evaluation",
       "figure": {
@@ -103,11 +104,12 @@
       "id": "tara_study",
       "label": "When a model calls an unnecessary tool",
       "type": "project",
-      "summary": "A matching office address prompted false tool calls in constructed requests. The same effect did not recur on 12 eligible city questions from independent benchmarks.",
+      "summary": "Mateenah’s TARA study compared two tool formats. In a follow-up designed and run by Codex, a matching office address prompted false calls on constructed requests. The effect did not recur on 12 independent benchmark questions.",
       "source_ids": [
         "tara_external",
         "tara",
-        "tara_matched_followup"
+        "tara_matched_followup",
+        "tara_study_contributions"
       ],
       "group": "AI interpretability and evaluation",
       "figure": {
@@ -1208,6 +1210,16 @@
       "id": "tisch_center",
       "label": "Mount Sinai Tisch Cancer Center",
       "url": "https://www.mountsinai.org/care/cancer/services/multiple-myeloma/about"
+    },
+    {
+      "id": "tara_study_contributions",
+      "label": "Study contributions",
+      "url": "https://github.com/MateenahJAHAN/tara-chat-tool-study/blob/main/CONTRIBUTIONS.md"
+    },
+    {
+      "id": "refusal_study_contributions",
+      "label": "Study contributions",
+      "url": "https://github.com/MateenahJAHAN/refusal-categories/blob/main/CONTRIBUTIONS.md"
     }
   ]
 }
